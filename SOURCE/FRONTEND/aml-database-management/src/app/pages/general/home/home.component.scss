@@ -1,0 +1,41 @@
+.mat-form-field {
+  font-size: 14px;
+  width: 20%;
+}
+
+#uploadButton,
+#newFileButton {
+  float: right;
+  margin-left: 5px;
+}
+
+#table {
+  margin: 20px auto;
+  max-height: 80vh;
+  table {
+    width: 100% !important;
+  }
+}
+
+.mat-row {
+  height: 7vh;
+}
+
+.actions-row {
+  display: flex;
+}
+
+#idCol {
+  display: none !important;
+  visibility: hidden;
+}
+
+th {
+  font-weight: bold;
+}
+
+td,
+th {
+  width: 23%;
+  font-size: 15px;
+}

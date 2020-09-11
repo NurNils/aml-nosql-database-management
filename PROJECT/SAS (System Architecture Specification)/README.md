@@ -1,0 +1,1 @@
+Wiki-Link: [System Architecture Specification](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/SAS-(System-Architecuture-Specification))

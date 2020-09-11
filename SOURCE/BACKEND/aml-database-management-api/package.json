@@ -1,0 +1,27 @@
+{
+  "name": "aml-database-management-api",
+  "version": "1.0.0",
+  "description": "AML Database Management API",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "format": "prettier --write \"./**/*.{js,json,ts,html,scss}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.26.0",
+    "mongoose": "^5.12.10",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2"
+  }
+}

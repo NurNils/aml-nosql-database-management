@@ -1,0 +1,72 @@
+<app-card-wrapper>
+  <h1>{{ 'login' | translate }}</h1>
+  <form
+    *ngIf="!needVerification"
+    [formGroup]="loginFormGroup"
+    (ngSubmit)="login()"
+    autocomplete="on"
+  >
+    <!-- Name or E-Mail -->
+    <mat-form-field appearance="outline">
+      <mat-label for="nickname">{{ 'username-or-email' | translate }}</mat-label>
+      <input
+        matInput
+        color="primary"
+        formControlName="usernameOrEmail"
+        id="nickname"
+        name="nickname"
+        required
+      />
+      <mat-error *ngIf="loginFormGroup.get('usernameOrEmail').hasError('required')">
+        {{ 'username-or-email-required' | translate }}
+      </mat-error>
+      <mat-error
+        *ngIf="
+          loginFormGroup.get('usernameOrEmail').hasError('minlength') ||
+          loginFormGroup.get('usernameOrEmail').hasError('maxlength')
+        "
+      >
+        {{ 'username-or-email-min-max' | translate }}
+      </mat-error>
+      <mat-error *ngIf="loginFormGroup.get('usernameOrEmail').hasError('pattern')">
+        {{ 'username-or-email-invalid' | translate }}
+      </mat-error>
+      <mat-hint *ngIf="loginFormGroup.get('usernameOrEmail').valid" [ngStyle]="{ color: 'green' }">
+        {{ 'username-or-email-valid' | translate }}
+      </mat-hint>
+      <mat-hint align="end"
+        >{{
+          loginFormGroup.get('usernameOrEmail').value
+            ? loginFormGroup.get('usernameOrEmail').value.length
+            : 0
+        }}
+        / 100</mat-hint
+      >
+      <button
+        type="button"
+        *ngIf="loginFormGroup.get('usernameOrEmail').value"
+        matSuffix
+        mat-icon-button
+        (click)="loginFormGroup.get('usernameOrEmail').patchValue(null)"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <!-- Password -->
+    <mat-form-field appearance="outline">
+      <mat-label for="password">{{ 'password' | translate }}</mat-label>
+      <input
+        type="password"
+        matInput
+        color="primary"
+        formControlName="password"
+        id="password"
+        name="password"
+        required
+      />
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary" [disabled]="loginFormGroup.invalid">
+      {{ 'login' | translate }}
+    </button>
+  </form>
+</app-card-wrapper>

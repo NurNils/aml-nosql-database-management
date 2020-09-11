@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>{{ (data?.id ? 'edit-file' : 'new-file') | translate }}</h2>
+<!-- Loading spinner -->
+<mat-spinner *ngIf="!editFileFormGroup"></mat-spinner>
+
+<ng-container *ngIf="editFileFormGroup">
+  <mat-dialog-content>
+    <p>{{ (data?.id ? 'edit-file-description' : 'new-file-description') | translate }}</p>
+    <!-- Edit Form -->
+    <form [formGroup]="editFileFormGroup">
+      <!-- Name -->
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'name' | translate }}</mat-label>
+        <input matInput color="primary" formControlName="name" />
+        <span *ngIf="!data?.id" matSuffix>.aml</span>
+      </mat-form-field>
+      <br />
+    </form>
+
+    <!-- Content -->
+    <ngx-codemirror
+      #codeMirror
+      [options]="codeMirrorOptions"
+      [(ngModel)]="content"
+    ></ngx-codemirror>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>{{ 'cancel' | translate }}</button>
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="editFileFormGroup.invalid || !content"
+      (click)="editFile()"
+    >
+      {{ 'upload' | translate }}
+    </button>
+  </mat-dialog-actions>
+</ng-container>

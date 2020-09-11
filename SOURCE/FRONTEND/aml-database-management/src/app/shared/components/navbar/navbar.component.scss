@@ -1,0 +1,36 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+#logo {
+  margin-right: 5px;
+  border-radius: 100%;
+}
+
+.link {
+  padding: 0 5px;
+  text-decoration: none;
+  color: black;
+}
+
+#navbar {
+  color: white;
+}
+
+.home-link {
+  text-decoration: none;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+#user {
+  padding: 0 5px;
+  text-align: center !important;
+}
+
+mat-icon {
+  color: black;
+}

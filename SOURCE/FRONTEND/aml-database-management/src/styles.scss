@@ -1,0 +1,87 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+@import '~codemirror/lib/codemirror';
+@import '~codemirror/theme/idea';
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$aml-database-management-primary: mat-palette($mat-orange);
+$aml-database-management-accent: mat-palette($mat-light-green);
+
+// The warn palette is optional (defaults to red).
+$aml-database-management-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$aml-database-management-theme: mat-light-theme(
+  $aml-database-management-primary,
+  $aml-database-management-accent,
+  $aml-database-management-warn
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($aml-database-management-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+table {
+  width: 100% !important;
+}
+
+// Material Overwrites
+mat-dialog-container {
+  mat-form-field {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+.mat-mini-fab,
+.mat-raised-button {
+  &[color='primary'],
+  &[color='accent'] {
+    color: white;
+  }
+}
+
+.mat-snackbar-success {
+  color: white;
+  background-color: #4caf50;
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+
+.mat-snackbar-error {
+  color: white;
+  background-color: #f44336;
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+
+// Code Mirror Overwrites
+.CodeMirror {
+  resize: none;
+  height: 50vh;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #9e9e9e;
+}

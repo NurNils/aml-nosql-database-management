@@ -1,0 +1,70 @@
+.card-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 50px 0px;
+  height: auto;
+  background-size: cover;
+  overflow: hidden;
+
+  mat-card {
+    border-top: 4px solid #ff9800;
+    margin: 5px auto;
+    width: 94%;
+    max-width: 954px;
+
+    &::ng-deep {
+      h1 {
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      h5 {
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      hr {
+        height: 1px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #ff9800;
+      }
+
+      mat-form-field {
+        display: block;
+        width: 92%;
+        margin: 10px 0;
+      }
+
+      mat-checkbox {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  .card-wrapper {
+    padding: 0px;
+    mat-card {
+      border-top: 0px solid #ff9800;
+      margin: 0;
+      width: 100%;
+      max-width: 97%;
+    }
+  }
+}

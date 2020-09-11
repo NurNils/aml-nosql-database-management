@@ -1,0 +1,1 @@
+Wiki-Link: [Modul Documentations](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/MODs-(Modul-Documentations))
