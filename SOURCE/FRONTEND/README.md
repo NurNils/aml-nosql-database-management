@@ -1,3 +1,3 @@
 # Frontend
 
-The front end ist implemented with Angular 10. More information about the installation can be find here: src/README.md
+The front end ist implemented with Angular. More information about the installation can be found [here](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/tree/master/SOURCE/FRONTEND/aml-database-management#readme).
