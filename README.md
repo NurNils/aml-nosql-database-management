@@ -5,15 +5,15 @@
 Welcome to the AML NoSQL Database Management Project.
 The project was developed by DHBW students in the 3rd semester during the lecture Software Engineering.
 
-## Contributors:
+### Contributors:
 - [Jonas Bihr](https://github.com/Rhib)
 - [Namid Marxen](https://github.com/NamidM)
 - [Nils-Christopher Wiesenauer](https://github.com/NurNils)
 - [Johannes Emanuel Timter](https://github.com/UdolfSeelenfrost)
 
-# About the project
+## About the project
 
-# Subprojects
+## Subprojects
 
-# Technologies
+## Technologies
 
