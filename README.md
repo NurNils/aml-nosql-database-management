@@ -1,6 +1,6 @@
 # aml-database-management
 
-![Logo](https://elementies.com/images/aml-database-management-logo.jpg)
+![Logo](https://elementies.com/images/aml-database-management-logo-small.jpg)
 
 ## Contributors:
 - Jonas Bihr
