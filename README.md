@@ -1,6 +1,6 @@
 # aml-database-management
 
-![Logo](http://francky.me/images/quora001.png)
+![Logo](https://elementies.com/images/aml-database-management-logo.jpg)
 
 ## Contributors:
 - Jonas Bihr
