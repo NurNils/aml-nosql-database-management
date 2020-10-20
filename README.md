@@ -2,8 +2,8 @@
  
 ![Logo](https://elementies.com/images/aml-database-management-logo-small.jpg)
 
-Willkommen zum AML NoSQL Datenbank Datenverwaltungs Projekt.
-Dieses Projekt wurde von Studenten der DHBW im 3. Semester im Zuge der Vorlesung Software Engineering entwickelt.
+Welcome to the AML NoSQL Database Management Project.
+The project was developed by DHBW students in the 3rd semester during the lecture Software Engineering.
 
 ## Contributors:
 - [Jonas Bihr](https://github.com/Rhib)
@@ -11,9 +11,9 @@ Dieses Projekt wurde von Studenten der DHBW im 3. Semester im Zuge der Vorlesung
 - [Nils-Christopher Wiesenauer](https://github.com/NurNils)
 - [Johannes Emanuel Timter](https://github.com/UdolfSeelenfrost)
 
-# Über dieses Projekt
+# About the project
 
 # Subprojects
 
-# Technologien
+# Technologies
 
