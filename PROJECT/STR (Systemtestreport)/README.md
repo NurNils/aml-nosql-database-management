@@ -1,1 +1,1 @@
-Wiki-Link: [Systemtestreport](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management)
+Wiki-Link: [Systemtestreport](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/STR-(Systemtestreport))

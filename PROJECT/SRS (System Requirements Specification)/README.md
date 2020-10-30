@@ -1,1 +1,1 @@
-Wiki-Link: [System Requirements Specification](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management)
+Wiki-Link: [System Requirements Specification](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/SRS-(System-Requirements-Specification))

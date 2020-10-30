@@ -1,1 +1,2 @@
-Wiki-Link: [System Architecture Specification](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management)
+# System Architecture Specification
+Description: -
