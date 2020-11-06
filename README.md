@@ -7,8 +7,8 @@ Welcome to the AML NoSQL Database Management Project.
 ### Contributors:
 - [Jonas Bihr](https://github.com/Rhib)
 - [Namid Marxen](https://github.com/NamidM)
-- [Nils-Christopher Wiesenauer](https://github.com/NurNils)
 - [Johannes Emanuel Timter](https://github.com/UdolfSeelenfrost)
+- [Nils-Christopher Wiesenauer](https://github.com/NurNils)
 
 ## About the project
 
