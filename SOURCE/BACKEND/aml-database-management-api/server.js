@@ -14,6 +14,7 @@ dotenv.config();
 const production = process.env.PRODUCTION === 'true';
 const port = process.env.PORT;
 
+const FILE = require('./models/file');
 
 /**********************
  * Config / Preperation
@@ -35,11 +36,41 @@ app.use((req, res, next) => {
   next();
 });
 
+/**********************
+ * Routes
+ **********************/
+
 /** Routes */ 
-//TODO: Add routes
+app.get('/file', (req, res) => {
+  FILE.getFiles((err, data) => {
+
+  });
+  res.send({ status: 'success', code: 200, message: 'blabla' });
+});
  
+app.post('/file', (req, res) => {
+
+  res.end();
+});
+
+app.get('/file/:id', (req, res) => {
+
+  res.end();
+});
+ 
+app.put('/file/:id', (req, res) => {
+
+  res.end();
+});
+
+app.delete('/file/:id', (req, res) => {
+
+  res.end();
+});
+
 /** Default */
 app.get('/', (req, res) => {
+  res.redirect('https://lmf.software');
   res.end();
 });
 

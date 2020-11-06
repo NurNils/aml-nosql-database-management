@@ -4,6 +4,7 @@
   "description": "AML Database Management API",
   "main": "server.js",
   "scripts": {
+    "format": "prettier --write \"./{models}/**/*.{js,json,ts,html,scss}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -19,7 +20,7 @@
     "moment": "^2.26.0",
     "mongoose": "^5.9.16",
     "nodemon": "^2.0.4",
-    "prettier": "^2.0.5",
+    "prettier": "^2.1.2",
     "request": "^2.88.2"
   }
 }
