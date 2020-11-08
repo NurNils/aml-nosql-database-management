@@ -42,30 +42,73 @@ app.use((req, res, next) => {
 
 /** Routes */ 
 app.get('/file', (req, res) => {
-  FILE.getFiles((err, data) => {
-
+  FILE.getFiles((err, files) => {
+    if (!err && files) {
+      res.status(200).send({ status: 'success', data: files });
+    } else {
+      res.status(200).send({ status: 'error', message: 'Unable to get files' });
+    }
   });
-  res.send({ status: 'success', code: 200, message: 'blabla' });
 });
  
 app.post('/file', (req, res) => {
+  const file = req.body.file;
 
-  res.end();
+  //TODO: Conversion of file
+
+  if (file && file.base64 && file.name && file.type) {
+    const availableFileTypes = FILES_IMAGE.split(',');
+    if (availableFileTypes.includes(file.type)) {
+      file.size = Buffer.from(file.base64.split(',')[1], 'base64').length;
+      FILE.addFile(file, (err, savedFile) => {
+        if (!err && savedFile) {
+          savedFile.base64 = null;
+          res.status(200).send({ status: 'success', data: savedFile });
+        } else {
+          res.status(200).send({ status: 'error', message: 'Unable to add file' });
+        }
+      });
+    } else {
+      res.status(200).send({ status: 'error', message: 'File type is not allowed' });
+    }
+  } else {
+    res.status(200).send({ status: 'error', message: 'No file was uploaded. Please try again' });
+  }
 });
 
 app.get('/file/:id', (req, res) => {
-
-  res.end();
+  FILE.getFile(req.params.id, (err, file) => {
+    if (!err && file) {
+      res.status(200).send({ status: 'success', data: file });
+    } else {
+      res.status(200).send({ status: 'error', message: 'Unable to get file' });
+    }
+  });
 });
  
 app.put('/file/:id', (req, res) => {
-
-  res.end();
+  FILE.updateFile(
+    req.params.id,
+    req.body.data,
+    { new: true },
+    (err, file) => {
+      if (!err && file) {
+        res.status(200).send({ status: 'success', data: file });
+      } else {
+        res.status(200).send({ status: 'error', message: 'Unable to update file' });
+      }
+    }
+  );
 });
 
 app.delete('/file/:id', (req, res) => {
-
-  res.end();
+  FILE.deleteFile(req.params.id, (err, file) => {
+    if (!err && file) {
+      res.status(200).send({ status: 'success', data: file });
+    } else {
+      res.status(200).send({ status: 'error', message: 'Unable to delete file' });
+    }
+  });
 });
 
 /** Default */

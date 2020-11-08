@@ -18,8 +18,8 @@ module.exports.deleteFile = (_id, callback) => {
     FILE.remove({ _id }, callback);
 };
 
-/** Get file by _id */
-module.exports.getFileById = (_id, callback) => {
+/** Get file */
+module.exports.getFile = (_id, callback) => {
     FILE.findOne({ _id }, callback);
 };
 
@@ -31,8 +31,8 @@ module.exports.addFile = (file, callback) => {
     FILE.create(file, callback);
 };
 
-/** Update file by _id */
-module.exports.updateFileById = (_id, file, options, callback) => {
+/** Update file */
+module.exports.updateFile = (_id, file, options, callback) => {
     const update = {
       name: file.name,
       content: file.content
