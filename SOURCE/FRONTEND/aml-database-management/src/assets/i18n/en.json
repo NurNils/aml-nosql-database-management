@@ -12,6 +12,12 @@
     "edit": "Edit",
     "download": "Download",
     "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save",
+    "upload-file": "Upload file",
+    "upload-file-description": "Here you can upload your AML file.",
+    "edit-file": "Edit file",
+    "edit-file-description": "Here you can edit the content of the file.",
     "success": {
         "file-uploaded": "File was uploaded successfully."
     }

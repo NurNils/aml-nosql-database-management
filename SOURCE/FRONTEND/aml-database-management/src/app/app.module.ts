@@ -25,9 +25,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 import { LanguageWrapperComponent } from './shared/components/language-wrapper/language-wrapper.component';
 import { InfoComponent } from './pages/info/info.component';
 
+import { EditFileDialogComponent } from './shared/dialogs/edit-file-dialog/edit-file-dialog.component';
+import { UploadFileDialogComponent } from './shared/dialogs/upload-file-dialog/upload-file-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,8 @@ import { InfoComponent } from './pages/info/info.component';
     LanguageWrapperComponent,
     NavbarComponent,
     InfoComponent,
+    EditFileDialogComponent,
+    UploadFileDialogComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -51,6 +56,7 @@ import { InfoComponent } from './pages/info/info.component';
     }),
     ReactiveFormsModule,
     MatButtonModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,

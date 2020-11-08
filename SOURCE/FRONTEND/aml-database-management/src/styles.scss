@@ -30,3 +30,11 @@ $aml-database-management-theme: mat-light-theme($aml-database-management-primary
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Material Overwrites
+mat-dialog-container {
+    mat-form-field {
+      width: 100%;
+      max-width: 400px;
+    }
+}
