@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>{{ 'upload-file' | translate }}</h2>
+<mat-dialog-content>
+    <p>{{ 'upload-file-description' | translate }}</p>
+    <!-- Upload Form -->
+    <form [formGroup]="uploadFileFormGroup">
+        <!-- Name -->
+        <input
+            color="primary"
+            formControlName="file"
+            type="file"
+            accept="{{ acceptedFiles }}"
+            (change)="handleFileChange($event)"
+        />
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>{{ 'cancel' | translate }}</button>
+  <button
+        mat-raised-button
+        type="submit"
+        color="primary"
+        [disabled]="uploadFileFormGroup.invalid || fileToUpload.size > maxFileSize"
+        (click)="uploadFile()"
+      >
+        {{ 'upload' | translate }}
+    </button>
+</mat-dialog-actions>

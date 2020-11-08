@@ -44,6 +44,8 @@ app.use((req, res, next) => {
 app.get('/file', (req, res) => {
   FILE.getFiles((err, files) => {
     if (!err && files) {
+      files = [{ id: '123', name: 'AML.aml', size: 100000, date: '10.10.2020'}];
+      
       res.status(200).send({ status: 'success', data: files });
     } else {
       res.status(200).send({ status: 'error', message: 'Unable to get files' });

@@ -6,6 +6,9 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ApiService } from '../../../services/api/api.service';
 import { IResponseStatus } from '../../../interfaces/response.interface';
 import { SnackBarService } from '../../../services/snack-bar/snack-bar.service';
+import { MatDialog } from '@angular/material/dialog';
+import { EditFileDialogComponent } from '../../../shared/dialogs/edit-file-dialog/edit-file-dialog.component';
+import { UploadFileDialogComponent } from '../../../shared/dialogs/upload-file-dialog/upload-file-dialog.component';
 
 export interface FileData {
   id: string;
@@ -45,7 +48,10 @@ export class HomeComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   /** Constructor */
-  constructor(private apiService: ApiService, private formBuilder: FormBuilder, private snackBarService: SnackBarService) {
+  constructor(private apiService: ApiService, 
+    private formBuilder: FormBuilder, 
+    private dialog: MatDialog,
+    private snackBarService: SnackBarService) {
     this.initData();
   }
 
@@ -92,28 +98,27 @@ export class HomeComponent implements OnInit {
 
   /** Upload file */
   async uploadFile() {
-    if (this.uploadFileFormGroup.valid) {
-      const res = await this.apiService.post('file', { file: this.fileToUpload });
-      if (res.status === IResponseStatus.success) {
-        const savedFile = res.data;
-        this.snackBarService.openDefaultSnackBar('success.file-uploaded');
-        this.uploadFileFormGroup.reset();
-      }
-    }
+    const dialogRef = this.dialog.open(UploadFileDialogComponent, {
+      height: '800px',
+      width: '600px'
+    }); 
   }
   
   /** Edit file */
   editFile(id: string) {
-    // TODO: Add functionality
+    const dialogRef = this.dialog.open(EditFileDialogComponent, {
+      height: '800px',
+      width: '600px'
+    }); 
   }
 
   /** Download file */
-  downloadFile(d: string) {
+  downloadFile(id: string) {
     // TODO: Add functionality
   }
 
   /** Delete file */
-  deleteFile(d: string) {
+  deleteFile(id: string) {
     // TODO: Add functionality
   }
 }
