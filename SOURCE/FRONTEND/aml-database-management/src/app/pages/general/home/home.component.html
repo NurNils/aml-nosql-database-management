@@ -1,8 +1,27 @@
 <h1>Home</h1>
 
+<!-- Upload 
+<form [formGroup]="uploadFileFormGroup" (submit)="uploadFile()">
+    <input
+      formControlName="file"
+      type="file"
+      accept="{{ acceptedFiles }}"
+      (change)="handleFileChange($event)"
+    />
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="uploadFileFormGroup.invalid || fileToUpload.size > maxFileSize"
+    >
+      {{ 'upload' | translate }}
+    </button>
+</form>
+-->
+
 <!-- Filter -->
 <mat-form-field>
-    <mat-label>Filter</mat-label>
+    <mat-label>{{ 'filter' | translate }}</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="example.aml" #input>
 </mat-form-field>
   
@@ -13,42 +32,42 @@
 
         <!-- ID Column -->
         <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'id' | translate }} </th>
             <td mat-cell *matCellDef="let row"> #{{ row.id }} </td>
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'name' | translate }} </th>
             <td mat-cell *matCellDef="let row"> {{ row.name }} </td>
         </ng-container>
 
         <!-- Size Column -->
         <ng-container matColumnDef="size">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Size </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'size' | translate }} </th>
             <td mat-cell *matCellDef="let row"> {{ row.size }} Bytes </td>
         </ng-container>
 
         <!-- Date Column -->
         <ng-container matColumnDef="date">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'date' | translate }} </th>
             <td mat-cell *matCellDef="let row"> {{ row.date }} </td>
         </ng-container>
 
         <!-- Actions Column -->
         <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <th mat-header-cell *matHeaderCellDef> {{ 'actions' | translate }} </th>
             <td mat-cell *matCellDef="let row">
                 <!-- Edit -->
-                <button mat-icon-button matTooltip="Edit" (click)="editFile(row.id)">
+                <button mat-icon-button matTooltip="{{ 'edit' | translate }}" (click)="editFile(row.id)">
                     <mat-icon>edit</mat-icon>
                 </button>
                 <!-- Download -->
-                <button mat-icon-button matTooltip="Download" (click)="downloadFile(row.id)">
+                <button mat-icon-button matTooltip="{{ 'download' | translate }}" (click)="downloadFile(row.id)">
                     <mat-icon>get_app</mat-icon>
                 </button>
                 <!-- Delete -->
-                <button mat-icon-button matTooltip="Delete" (click)="deleteFile(row.id)">
+                <button mat-icon-button matTooltip="{{ 'delete' | translate }}" (click)="deleteFile(row.id)">
                     <mat-icon>delete</mat-icon>
                 </button>
             </td>

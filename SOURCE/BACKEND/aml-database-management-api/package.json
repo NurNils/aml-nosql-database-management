@@ -4,6 +4,7 @@
   "description": "AML Database Management API",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "format": "prettier --write \"./{models}/**/*.{js,json,ts,html,scss}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

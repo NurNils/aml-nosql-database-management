@@ -1,0 +1,18 @@
+{
+    "app": "AML NoSQL Datenbank Manangement",
+    "about-us": "Über uns",
+    "home": "Startseite",
+    "upload": "Hochladen",
+    "filter": "Filter",
+    "id": "ID",
+    "name": "Name",
+    "size": "Größe",
+    "date": "Datum",
+    "actions": "Aktionen",
+    "edit": "Editieren",
+    "download": "Download",
+    "delete": "Löschen",
+    "success": {
+        "file-uploaded": "Datei erfolgreich hochgeladen."
+    }
+}

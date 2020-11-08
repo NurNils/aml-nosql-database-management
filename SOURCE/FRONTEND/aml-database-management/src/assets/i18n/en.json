@@ -1,0 +1,18 @@
+{
+    "app": "AML NoSQL Database Manangement",
+    "about-us": "About Us",
+    "home": "Home",
+    "upload": "Upload",
+    "filter": "Filter",
+    "id": "ID",
+    "name": "Name",
+    "size": "Size",
+    "date": "Date",
+    "actions": "Actions",
+    "edit": "Edit",
+    "download": "Download",
+    "delete": "Delete",
+    "success": {
+        "file-uploaded": "File was uploaded successfully."
+    }
+}

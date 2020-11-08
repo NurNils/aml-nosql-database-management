@@ -1,0 +1,25 @@
+<!-- Language Wrapper -->
+<div class="language-wrapper">
+  <button mat-icon-button [matMenuTriggerFor]="language">
+    <img
+      *ngFor="let language of languageService.getLanguages()"
+      [hidden]="!languageService.isLanguage(language.lang)"
+      src="assets/images/flags/{{ language.lang }}.png"
+      alt="Flag of {{ language.country }}"
+    />
+  </button>
+  <mat-menu #language="matMenu">
+    <button
+      *ngFor="let language of languageService.getLanguages()"
+      mat-menu-item
+      (click)="languageService.changeLanguage(language.lang)"
+    >
+      <img
+        class="flag"
+        src="assets/images/flags/{{ language.lang }}.png"
+        alt="Flag of {{ language.country }}"
+      />
+      {{ language.name }}
+    </button>
+  </mat-menu>
+</div>

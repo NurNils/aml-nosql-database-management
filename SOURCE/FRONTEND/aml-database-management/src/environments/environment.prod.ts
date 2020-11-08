@@ -1,3 +1,12 @@
+import { environment as defaultEnvironment } from './environment.default';
+
 export const environment = {
-  production: true
+  ...defaultEnvironment,
+  production: true,
+  app: {
+    baseUrl: 'https://lmf.software/',
+  },
+  api: {
+    baseUrl: 'https://api.lmf.software/',
+  },
 };
