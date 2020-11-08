@@ -20,7 +20,8 @@ export interface FileData {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  maxFileSize = 1;
+  acceptedFiles = {};
   /** Displayed Columns */
   displayedColumns: string[] = ['id', 'name', 'size', 'date', 'actions'];
 

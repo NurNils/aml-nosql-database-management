@@ -4,9 +4,24 @@ table {
 
 .mat-form-field {
   font-size: 14px;
-  width: 100%;
+  width: 20%;
+  margin-left: 15px;
+}
+
+#uploadForm{
+  margin-right: 15px;
+  float: right;
+}
+
+#home{
+  margin-left: 15px;
+}
+
+th {
+  font-weight: bold;
 }
 
 td, th {
   width: 25%;
+  font-size: 15px;
 }

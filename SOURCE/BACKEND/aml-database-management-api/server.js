@@ -44,6 +44,7 @@ app.use((req, res, next) => {
 app.get('/file', (req, res) => {
   FILE.getFiles((err, files) => {
     if (!err && files) {
+      files = [{id: "1", name: "Nils", size: 300, date: "08.11.2020"}];
       res.status(200).send({ status: 'success', data: files });
     } else {
       res.status(200).send({ status: 'error', message: 'Unable to get files' });

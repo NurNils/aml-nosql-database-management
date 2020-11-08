@@ -26,6 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 import { LanguageWrapperComponent } from './shared/components/language-wrapper/language-wrapper.component';
+import { InfoComponent } from './pages/info/info.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { LanguageWrapperComponent } from './shared/components/language-wrapper/l
     HomeComponent,
     LanguageWrapperComponent,
     NavbarComponent,
+    InfoComponent,
   ],
   imports: [
     AppRoutingModule,

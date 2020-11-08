@@ -1,23 +1,16 @@
-<h1>Home</h1>
+<h1 id="home">{{ 'home' | translate }}</h1>
 
-<!-- Upload 
-<form [formGroup]="uploadFileFormGroup" (submit)="uploadFile()">
-    <input
-      formControlName="file"
-      type="file"
-      accept="{{ acceptedFiles }}"
-      (change)="handleFileChange($event)"
-    />
+ 
+<form [formGroup]="uploadFileFormGroup" (submit)="uploadFile()" id="uploadForm">
     <button
       mat-raised-button
       type="submit"
       color="primary"
-      [disabled]="uploadFileFormGroup.invalid || fileToUpload.size > maxFileSize"
     >
       {{ 'upload' | translate }}
     </button>
 </form>
--->
+
 
 <!-- Filter -->
 <mat-form-field>
