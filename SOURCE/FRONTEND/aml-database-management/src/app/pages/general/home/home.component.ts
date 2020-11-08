@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -19,7 +19,7 @@ export interface FileData {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
 
   /** Displayed Columns */
   displayedColumns: string[] = ['id', 'name', 'size', 'date', 'actions'];
@@ -46,28 +46,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   /** Constructor */
   constructor(private apiService: ApiService, private formBuilder: FormBuilder, private snackBarService: SnackBarService) {
-    this.dataSource = new MatTableDataSource(
-      [
-        {
-          id: '1',
-          name: 'AMLFile.aml',
-          size: '241414',
-          date: '01-11-2020'
-        },
-        {
-          id: '2',
-          name: 'AMLFile1.aml',
-          size: '1231233',
-          date: '02-11-2020'
-        },
-        {
-          id: '3',
-          name: 'AMLFile2.aml',
-          size: '4441112',
-          date: '03-11-2020'
-        },
-      ]
-    );
+    this.initData();
   }
 
   /** Initialize file form group */
@@ -77,12 +56,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
-  /** Initialize view childs */
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+  /** Initialize data */
+  async initData() {
+    const res = await this.apiService.get('file');
+    if (res.status === IResponseStatus.success) {
+      this.dataSource = new MatTableDataSource(res.data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    }
   }
-
+  
   /** Handle file change */
   handleFileChange(event: any) {
     if (event.target.files && event.target.files[0]) {
@@ -97,18 +80,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
-  /** Upload file */
-  async uploadFile() {
-    if (this.uploadFileFormGroup.valid) {
-      const res = await this.apiService.post(`image`, { file: this.fileToUpload });
-      if (res.status === IResponseStatus.success) {
-        const savedFile = res.data;
-        this.snackBarService.openDefaultSnackBar('success.file-uploaded');
-        this.uploadFileFormGroup.reset();
-      }
-    }
-  }
-
   /** Apply filter to datasource */
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -119,6 +90,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
+  /** Upload file */
+  async uploadFile() {
+    if (this.uploadFileFormGroup.valid) {
+      const res = await this.apiService.post('file', { file: this.fileToUpload });
+      if (res.status === IResponseStatus.success) {
+        const savedFile = res.data;
+        this.snackBarService.openDefaultSnackBar('success.file-uploaded');
+        this.uploadFileFormGroup.reset();
+      }
+    }
+  }
+  
   /** Edit file */
   editFile(id: string) {
     // TODO: Add functionality
