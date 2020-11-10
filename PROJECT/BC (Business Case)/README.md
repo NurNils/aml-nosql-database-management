@@ -1,2 +1,2 @@
 # Business Case 
-Description: -
+Kurze Betrachtung der wirtschaftlichen Aspekte des Projekts
