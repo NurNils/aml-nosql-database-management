@@ -24,7 +24,7 @@ export interface FileData {
 })
 export class HomeComponent implements OnInit {
   maxFileSize = 1;
-  acceptedFiles = {};
+  acceptedFiles = {}; 
   /** Displayed Columns */
   displayedColumns: string[] = ['id', 'name', 'size', 'date', 'actions'];
 
@@ -100,16 +100,16 @@ export class HomeComponent implements OnInit {
   /** Upload file */
   async uploadFile() {
     const dialogRef = this.dialog.open(UploadFileDialogComponent, {
-      height: '800px',
-      width: '600px'
+      height: '90vh',
+      width: '90vw'
     }); 
   }
   
   /** Edit file */
   editFile(id: string) {
     const dialogRef = this.dialog.open(EditFileDialogComponent, {
-      height: '800px',
-      width: '600px'
+      height: '90vh',
+      width: '90vw'
     }); 
   }
 

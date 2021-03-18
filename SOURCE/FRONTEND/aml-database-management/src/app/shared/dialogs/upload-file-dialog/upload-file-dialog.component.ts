@@ -16,7 +16,7 @@ export class UploadFileDialogComponent implements OnInit {
   maxFileSize = environment.form.maxSize;
 
   /** Accept files */
-  acceptFiles = environment.form.acceptedFiles;
+  acceptedFiles = environment.form.acceptedFiles;
 
   /** Upload file form group */
   uploadFileFormGroup: FormGroup;

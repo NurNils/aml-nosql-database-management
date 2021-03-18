@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 app.get('/file', (req, res) => {
   FILE.getFiles((err, files) => {
     if (!err && files) {
-      files = [{id: "1", name: "Nils", size: 300, date: "08.11.2020"}];
+      files = [{id: "1", name: "test_file.aml", size: 300, date: "08.11.2020"}, {id: "2", name: "test_file2.aml", size: 311, date: "09.11.2020"}, {id: "3", name: "test_file3.aml", size: 351, date: "09.11.2020"}, {id: "4", name: "test_file4.aml", size: 643, date: "10.11.2020"}, {id: "5", name: "test_file5.aml", size: 420, date: "10.11.2020"}, {id: "6", name: "test_file6.aml", size: 690, date: "11.11.2020"}];
       res.status(200).send({ status: 'success', data: files });
     } else {
       res.status(200).send({ status: 'error', message: 'Unable to get files' });

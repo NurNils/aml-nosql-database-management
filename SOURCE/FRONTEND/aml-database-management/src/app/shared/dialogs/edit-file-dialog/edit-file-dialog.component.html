@@ -10,16 +10,28 @@
                 matInput 
                 color="primary" 
                 formControlName="name"
+                value="test_file.aml"
             />
         </mat-form-field>
         <br>
         <!-- Content -->
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="contentField">
             <mat-label>{{ 'content' | translate }}</mat-label>
-            <textarea 
+            <textarea class="contentTxtField"
                 matInput 
                 color="primary" 
                 formControlName="name">
+                <CAEXFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.dke.de/CAEX" SchemaVersion="3.0" FileName="Master Library_RCL0.30 CAEX 3.0 - Version 5.90.aml" xsi:schemaLocation="http://www.dke.de/CAEX CAEX_ClassModel_V.3.0.xsd">
+                    <AdditionalInformation AutomationMLVersion="2.0" />
+                    <v>
+                    <SuperiorStandardVersion>AutomationML 2.10</SuperiorStandardVersion>
+                    <SourceDocumentInformation OriginName="AutomationML Editor" OriginID="916578CA-FE0D-474E-A4FC-9E1719892369" OriginVersion="4.6.5.0" LastWritingDateTime="2019-10-09T17:00:28.8856077+02:00" OriginVendor="AutomationML e.V." OriginVendorURL="www.AutomationML.org" OriginRelease="4.6.5.0" OriginProjectTitle="unspecified" OriginProjectID="unspecified" />
+                    <InterfaceClassLib Name="AutomationMLBPRInterfaceClassLib">
+                      <Version>0.0.1</Version>
+                      <InterfaceClass Name="ExternalDataReference" RefBaseClassPath="AutomationMLInterfaceClassLib/AutomationMLBaseInterface/ExternalDataConnector" ID="{320f7f3a-6df8-4ccd-af35-a4367b37eb7a}">
+                        <Attribute Name="MIMEType" AttributeDataType="xs:string" />
+                      </InterfaceClass>
+                    </InterfaceClassLib>
             </textarea>
         </mat-form-field>
     </form>
