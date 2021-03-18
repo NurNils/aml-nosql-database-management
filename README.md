@@ -10,6 +10,11 @@ Welcome to the AML NoSQL Database Management Project.
 - [Johannes Emanuel Timter](https://github.com/UdolfSeelenfrost)
 - [Nils-Christopher Wiesenauer](https://github.com/NurNils)
 
+### Wiki:
+1. [SRS (System Requirements Specification)](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/1.-SRS-(System-Requirements-Specification))
+2. [SAS (System Architecuture Specification)](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/2.-SAS-(System-Architecuture-Specification))
+3. [MODs (Modul Documentations)](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/3.-MODs-(Modul-Documentations))
+
 ## About the project
 
 The project was developed by DHBW students in the 3rd semester during the lecture Software Engineering.

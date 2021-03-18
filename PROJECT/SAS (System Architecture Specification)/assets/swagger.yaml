@@ -1,0 +1,186 @@
+swagger: "2.0"
+info:
+  description: "The project was developed by DHBW students in the 3rd semester during the lecture Software Engineering. The main purpose of the software will be to upload AutomationML files to a database. The uploaded files can be accessed from the user through a web interface. In that interface the user is also able to edit, delete and download existing files. He should also have the ability to search for saved documents. This provides the user with an easy way to upload AutomationML files into a database and conveniently handle them through a web interface."
+  version: "1.0.0"
+  title: "AML NoSQL Database Management"
+  termsOfService: "http://lmf.software/terms/"
+  contact:
+    email: "team@lmf.software"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "api.lmf.software"
+basePath: "/"
+tags:
+- name: "file"
+  description: "Everything about the files"
+  externalDocs:
+    description: "Find out more"
+    url: "http://lmf.software"
+schemes:
+- "https"
+- "http"
+paths:
+  /file:
+    get:
+      tags:
+      - "file"
+      summary: "Get all existing files"
+      description: "Get all existing files"
+      operationId: "getFiles"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "Files found"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "404":
+          description: "Files not found"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "500":
+          description: "Internal server error"
+    post:
+      tags:
+      - "file"
+      summary: "Add a new file"
+      description: "Upload an AML file"
+      operationId: "addFile"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "File object that needs to be converted"
+        required: true
+        schema:
+          $ref: "#/definitions/File"
+      responses:
+        "200":
+          description: "File uploaded successfully"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "400":
+          description: "File upload not successfull"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "500":
+          description: "Internal server error"
+  /file/{id}:
+    get:
+      tags:
+      - "file"
+      summary: "Finds file by id"
+      description: "Find file by id"
+      operationId: "getFile"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "id"
+        type: "string"
+        description: "Identification of the searched file"
+        required: true
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "404":
+          description: "File not found"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "500":
+          description: "Internal server error"
+    put:
+      tags:
+      - "file"
+      summary: "Update an existing file"
+      description: ""
+      operationId: "updateFile"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "id"
+        type: "string"
+        description: "Identification of the file to be updated"
+        required: true
+      responses:
+        "200":
+          description: "File updated successfully"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "404":
+          description: "ID not found"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "500":
+          description: "Internal server error"
+    delete:
+      tags:
+      - "file"
+      summary: "Delete an existing file"
+      description: ""
+      operationId: "deleteFile"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "id"
+        type: "string"
+        description: "Identification of the file to be deleted"
+        required: true
+      responses:
+        "200":
+          description: "File deleted successfully"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "404":
+          description: "ID not found"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "500":
+          description: "Internal server error"
+definitions:
+  File:
+    type: "object"
+    required:
+    - "name"
+    - "content"
+    properties:
+      name:
+        type: "string"
+        example: "AML-File.xml"
+      content:
+        type: "string"
+        example: "..."
+  ApiResponse:
+    type: "object"
+    required:
+    - "status"
+    - "code"
+    properties:
+      status:
+        type: "string"
+      code:
+        type: "integer"
+        format: "int64"
+      message:
+        type: "string"
+      data:
+        type: "array"
+        items:
+          type: "object"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
