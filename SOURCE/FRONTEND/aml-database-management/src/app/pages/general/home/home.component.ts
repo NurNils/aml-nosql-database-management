@@ -9,6 +9,7 @@ import { SnackBarService } from '../../../services/snack-bar/snack-bar.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditFileDialogComponent } from '../../../shared/dialogs/edit-file-dialog/edit-file-dialog.component';
 import { UploadFileDialogComponent } from '../../../shared/dialogs/upload-file-dialog/upload-file-dialog.component';
+import { ifError } from 'assert';
 
 export interface FileData {
   id: string;
@@ -26,21 +27,10 @@ export class HomeComponent implements OnInit {
   maxFileSize = 1;
   acceptedFiles = {}; 
   /** Displayed Columns */
-  displayedColumns: string[] = ['id', 'name', 'size', 'date', 'actions'];
+  displayedColumns: string[] = ['id', '_id', 'name', 'size', 'date', 'actions'];
 
   /** Datasource for Table */
   dataSource: MatTableDataSource<FileData>;
-
-  /** Upload file form group */
-  uploadFileFormGroup: FormGroup;
-
-  /** File to upload */
-  fileToUpload = {
-    base64: null,
-    name: null,
-    size: null,
-    type: null,
-  };
 
   /** MatPaginator ViewChild */
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -56,11 +46,8 @@ export class HomeComponent implements OnInit {
     this.initData();
   }
 
-  /** Initialize file form group */
+  /** Initialize */
   ngOnInit() {
-    this.uploadFileFormGroup = this.formBuilder.group({
-      file: [null, Validators.required],
-    });
   }
 
   /** Initialize data */
@@ -70,20 +57,6 @@ export class HomeComponent implements OnInit {
       this.dataSource = new MatTableDataSource(res.data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-    }
-  }
-  
-  /** Handle file change */
-  handleFileChange(event: any) {
-    if (event.target.files && event.target.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (onLoad: any) => {
-        this.fileToUpload.base64 = onLoad.target.result;
-      };
-      this.fileToUpload.name = event.target.files[0].name;
-      this.fileToUpload.size = event.target.files[0].size;
-      this.fileToUpload.type = event.target.files[0].type;
-      reader.readAsDataURL(event.target.files[0]);
     }
   }
 
@@ -103,23 +76,37 @@ export class HomeComponent implements OnInit {
       height: '90vh',
       width: '90vw'
     }); 
+    dialogRef.afterClosed().subscribe(res=>{
+      if(res) {
+        location.reload();
+      }
+    });
   }
   
   /** Edit file */
   editFile(id: string) {
     const dialogRef = this.dialog.open(EditFileDialogComponent, {
       height: '90vh',
-      width: '90vw'
+      width: '90vw',
+      data: { id }
     }); 
-  }
-
-  /** Download file */
-  downloadFile(id: string) {
-    // TODO: Add functionality
+    dialogRef.afterClosed().subscribe(res=>{
+      if(res) {
+        location.reload();
+      }
+    });
   }
 
   /** Delete file */
-  deleteFile(id: string) {
-    // TODO: Add functionality
+  async deleteFile(id: string) {
+    const res = await this.apiService.delete(`file/${id}`);
+    if (res.status === IResponseStatus.success) {
+      this.snackBarService.openDefaultSnackBar('success.file-deleted');
+      location.reload();
+    }
+  }
+
+  getDownloadId(id: string) {
+    return `${this.apiService.baseUrl}file/${id}/download`;
   }
 }

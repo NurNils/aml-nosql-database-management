@@ -44,8 +44,12 @@ app.use((req, res, next) => {
 app.get('/file', (req, res) => {
   FILE.getFiles((err, files) => {
     if (!err && files) {
-      files = [{id: "1", name: "test_file.aml", size: 300, date: "08.11.2020"}, {id: "2", name: "test_file2.aml", size: 311, date: "09.11.2020"}, {id: "3", name: "test_file3.aml", size: 351, date: "09.11.2020"}, {id: "4", name: "test_file4.aml", size: 643, date: "10.11.2020"}, {id: "5", name: "test_file5.aml", size: 420, date: "10.11.2020"}, {id: "6", name: "test_file6.aml", size: 690, date: "11.11.2020"}];
-      res.status(200).send({ status: 'success', data: files });
+      let dataSource = [];
+      files.forEach((f, i) => {
+        dataSource.push({id: i+1, _id: f._id , name: f.name, date: f.date, size: f.size});
+      });
+      
+      res.status(200).send({ status: 'success', data: dataSource });
     } else {
       res.status(200).send({ status: 'error', message: 'Unable to get files' });
     }
@@ -55,11 +59,9 @@ app.get('/file', (req, res) => {
 app.post('/file', (req, res) => {
   const file = req.body.file;
 
-  //TODO: Conversion of file
-
-  if (file && file.base64 && file.name && file.type) {
-    const availableFileTypes = FILES_IMAGE.split(',');
-    if (availableFileTypes.includes(file.type)) {
+  if (file && file.base64 && file.name && file.size) {
+    const availableFileTypes = process.env.ALLOWED_FILES.split(',');
+    if (availableFileTypes.includes(`.${file.name.split(".").pop().toLowerCase()}`)) {
       file.size = Buffer.from(file.base64.split(',')[1], 'base64').length;
       FILE.addFile(file, (err, savedFile) => {
         if (!err && savedFile) {
@@ -78,19 +80,40 @@ app.post('/file', (req, res) => {
 });
 
 app.get('/file/:id', (req, res) => {
+  // TODO: Convert to Content
   FILE.getFile(req.params.id, (err, file) => {
     if (!err && file) {
-      res.status(200).send({ status: 'success', data: file });
+      let newObj = {name: file.name, content: file.base64}
+      res.status(200).send({ status: 'success', data: newObj });
     } else {
       res.status(200).send({ status: 'error', message: 'Unable to get file' });
     }
   });
 });
+
+app.get(`/file/:id/download`, (req, res) => {
+  FILE.getFile(req.params.id, (err, file) => {
+    if (!err && file) {
+      const fileBuffer = Buffer.from(file.base64.split(',')[1], 'base64');
+      res.writeHead(200, { 'Content-Type': file.type, 'Content-Length': fileBuffer.length });
+      res.end(fileBuffer);
+    } else {
+      res.status(404);
+    }
+  });
+});
  
 app.put('/file/:id', (req, res) => {
+  // TODO: Convert to base64
+  let file = req.body.file;
+  file.base64 = file.content;
+  delete file.content;
+  file.date = new Date();
+  // TODO Calculate size after conversion
+  file.size = 100;
   FILE.updateFile(
     req.params.id,
-    req.body.data,
+    file,
     { new: true },
     (err, file) => {
       if (!err && file) {
@@ -114,7 +137,7 @@ app.delete('/file/:id', (req, res) => {
 
 /** Default */
 app.get('/', (req, res) => {
-  res.redirect('https://lmf.software');
+  res.redirect('https://lmf.software/info');
   res.end();
 });
 

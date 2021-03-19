@@ -21,7 +21,7 @@ export class SnackBarService {
 
   /** Open a full editable snackbar */
   openSnackBar(translation: string, duration: number, pannelClass?: string) {
-    this.translate.get('general.ok').subscribe((ok: string) => {
+    this.translate.get('ok').subscribe((ok: string) => {
       this.snackBar.open(translation, ok, {
         duration,
         panelClass: [pannelClass],

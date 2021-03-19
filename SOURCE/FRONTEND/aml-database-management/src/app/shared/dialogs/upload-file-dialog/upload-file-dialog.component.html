@@ -19,7 +19,7 @@
         mat-raised-button
         type="submit"
         color="primary"
-        [disabled]="uploadFileFormGroup.invalid || fileToUpload.size > maxFileSize"
+        [disabled]="uploadFileFormGroup.invalid"
         (click)="uploadFile()"
       >
         {{ 'upload' | translate }}

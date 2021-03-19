@@ -14,11 +14,16 @@
     "delete": "Delete",
     "cancel": "Cancel",
     "save": "Save",
+    "ok": "Ok",
     "upload-file": "Upload file",
     "upload-file-description": "Here you can upload your AML file.",
     "edit-file": "Edit file",
     "edit-file-description": "Here you can edit the content of the file.",
     "success": {
-        "file-uploaded": "File was uploaded successfully."
+        "file-uploaded": "File was uploaded successfully.",
+        "file-deleted": "File was deleted successfully."
+    },
+    "error": {
+        "file-not-found": "File not found"
     }
 }

@@ -12,6 +12,15 @@ table {
   margin-right: 15px;
   float: right;
 }
+#idCol{
+  display: none !important;
+  visibility: hidden;
+}
+
+#download-file-btn{
+  text-decoration: none;
+  color: black;
+}
 
 #home{
   margin-left: 15px;

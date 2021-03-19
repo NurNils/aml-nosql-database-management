@@ -21,14 +21,6 @@ export class UploadFileDialogComponent implements OnInit {
   /** Upload file form group */
   uploadFileFormGroup: FormGroup;
 
-  /** File to upload */
-  fileToUpload = {
-    base64: null,
-    name: null,
-    size: null,
-    type: null,
-  };
-
   /** Constructor */
   constructor(
     public dialogRef: MatDialogRef<UploadFileDialogComponent>,
@@ -41,11 +33,10 @@ export class UploadFileDialogComponent implements OnInit {
   /** Initialize Upload form */
   ngOnInit() {
     this.uploadFileFormGroup = this.formBuilder.group({
-      file: null,
       base64: [null, Validators.required],
       name: [null, Validators.required],
-      size: [null, Validators.required],
-      type: [null, Validators.required],
+      size: [null, [Validators.required, Validators.max(this.maxFileSize)]],
+      type: [null]
     });
   }
 
@@ -66,7 +57,6 @@ export class UploadFileDialogComponent implements OnInit {
         size: event.target.files[0].size,
         type: event.target.files[0].type
       });
-      this.fileToUpload.type = event.target.files[0].type;
       reader.readAsDataURL(event.target.files[0]);
     }
   }
@@ -74,12 +64,18 @@ export class UploadFileDialogComponent implements OnInit {
   /** Upload file */
   async uploadFile() {
     if (this.uploadFileFormGroup.valid) {
-      const res = await this.apiService.post('file', { file: this.fileToUpload });
+      const file = {
+        base64: this.uploadFileFormGroup.get('base64').value,
+        name: this.uploadFileFormGroup.get('name').value,
+        size: this.uploadFileFormGroup.get('size').value,
+        type: this.uploadFileFormGroup.get('type').value
+      };
+      const res = await this.apiService.post('file', { file });
       if (res.status === IResponseStatus.success) {
         const savedFile = res.data;
         this.snackBarService.openDefaultSnackBar('success.file-uploaded');
         this.uploadFileFormGroup.reset();
-        this.dialogRef.close();
+        this.dialogRef.close(savedFile);
       }
     }
   }

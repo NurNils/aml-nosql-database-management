@@ -2,8 +2,16 @@ var mongoose = require('mongoose');
 
 /** File Schema */
 const FILE_SCHEMA = mongoose.Schema({
-    name: String,
-    content: String
+    base64: String,
+    name: {
+        type: String,
+        index: {
+            unique: true
+        }
+    },
+    type: String,
+    size: String,
+    date: Date
 });
 
 const FILE = module.exports = mongoose.model('File', FILE_SCHEMA);
@@ -28,14 +36,20 @@ module.exports.addFile = (file, callback) => {
     if(file._id == null) {
         file._id = new mongoose.mongo.ObjectID();
     }
+    if(file.date == null) {
+        file.date = new Date();
+    }
     FILE.create(file, callback);
 };
 
 /** Update file */
 module.exports.updateFile = (_id, file, options, callback) => {
     const update = {
+      base64: file.base64,
       name: file.name,
-      content: file.content
+      size: file.size,
+      type: file.type,
+      date: file.date
     };
     FILE.findOneAndUpdate({ _id }, update, options, callback);
 };
