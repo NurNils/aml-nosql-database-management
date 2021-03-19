@@ -14,6 +14,7 @@ Welcome to the AML NoSQL Database Management Project.
 1. [SRS (System Requirements Specification)](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/1.-SRS-(System-Requirements-Specification))
 2. [SAS (System Architecuture Specification)](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/2.-SAS-(System-Architecuture-Specification))
 3. [MODs (Modul Documentations)](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/3.-MODs-(Modul-Documentations))
+4. [MM (Meeting Minutes)](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/4.-MM-(Meeting-Minutes))
 
 ## About the project
 
