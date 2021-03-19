@@ -61,13 +61,18 @@ app.post('/file', (req, res) => {
 
   if (file && file.base64 && file.name && file.size) {
     const availableFileTypes = process.env.ALLOWED_FILES.split(',');
-    if (availableFileTypes.includes(`.${file.name.split(".").pop().toLowerCase()}`)) {
+    if(!file.type) {
+      file.type = 'application/xml';
+    }
+    if (availableFileTypes.includes(`.${file.name.split('.').pop().toLowerCase()}`)) {
       file.size = Buffer.from(file.base64.split(',')[1], 'base64').length;
+      file.base64 = file.base64.split(',')[1];
       FILE.addFile(file, (err, savedFile) => {
         if (!err && savedFile) {
           savedFile.base64 = null;
           res.status(200).send({ status: 'success', data: savedFile });
         } else {
+          console.log(err.message)
           res.status(200).send({ status: 'error', message: 'Unable to add file' });
         }
       });
@@ -80,10 +85,9 @@ app.post('/file', (req, res) => {
 });
 
 app.get('/file/:id', (req, res) => {
-  // TODO: Convert to Content
   FILE.getFile(req.params.id, (err, file) => {
     if (!err && file) {
-      let newObj = {name: file.name, content: file.base64}
+      let newObj = {name: file.name, content: Buffer(file.base64, 'base64').toString('ascii')}
       res.status(200).send({ status: 'success', data: newObj });
     } else {
       res.status(200).send({ status: 'error', message: 'Unable to get file' });
@@ -94,23 +98,19 @@ app.get('/file/:id', (req, res) => {
 app.get(`/file/:id/download`, (req, res) => {
   FILE.getFile(req.params.id, (err, file) => {
     if (!err && file) {
-      const fileBuffer = Buffer.from(file.base64.split(',')[1], 'base64');
-      res.writeHead(200, { 'Content-Type': file.type, 'Content-Length': fileBuffer.length });
-      res.end(fileBuffer);
+      res.status(200).send({status: 'success', data: file});
     } else {
-      res.status(404);
+      res.status(200).send({status: 'error', message: 'Unable to download file'});
     }
   });
 });
  
 app.put('/file/:id', (req, res) => {
-  // TODO: Convert to base64
   let file = req.body.file;
-  file.base64 = file.content;
+  file.base64 = new Buffer(file.content).toString('base64');
   delete file.content;
   file.date = new Date();
-  // TODO Calculate size after conversion
-  file.size = 100;
+  file.size = Buffer.from(file.base64, 'base64').length;
   FILE.updateFile(
     req.params.id,
     file,

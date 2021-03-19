@@ -106,7 +106,16 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  getDownloadId(id: string) {
-    return `${this.apiService.baseUrl}file/${id}/download`;
+  /** Download file */
+  async downloadFile(id: string) {
+    const res = await this.apiService.get(`file/${id}/download`);
+    if (res.status === IResponseStatus.success) {
+      const file = res.data;
+      const a = document.createElement('a');
+      a.setAttribute('download', file.name);
+      console.log(file);
+      a.setAttribute('href', window.URL.createObjectURL(new Blob([atob(file.base64)], { type: 'text/plain' })));
+      a.click()
+    }
   }
 }

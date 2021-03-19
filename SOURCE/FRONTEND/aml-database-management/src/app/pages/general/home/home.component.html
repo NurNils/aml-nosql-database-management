@@ -42,7 +42,7 @@
         <!-- Date Column -->
         <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'date' | translate }} </th>
-            <td mat-cell *matCellDef="let row"> {{ row.date | date:'dd.MM.yyyy hh:mm' }} </td>
+            <td mat-cell *matCellDef="let row"> {{ row.date | date:'dd.MM.yyyy HH:mm' }} </td>
         </ng-container>
 
         <!-- Actions Column -->
@@ -54,11 +54,9 @@
                     <mat-icon>edit</mat-icon>
                 </button>
                 <!-- Download -->
-                <a href="{{ getDownloadId(row._id) }}" download id="download-file-btn">
-                    <button mat-icon-button matTooltip="{{ 'download' | translate }}">
-                        <mat-icon>get_app</mat-icon>
-                    </button>
-                </a>
+                <button mat-icon-button matTooltip="{{ 'download' | translate }}" (click)="downloadFile(row._id)">
+                    <mat-icon>get_app</mat-icon>
+                </button>
                 <!-- Delete -->
                 <button mat-icon-button matTooltip="{{ 'delete' | translate }}" (click)="deleteFile(row._id)">
                     <mat-icon>delete</mat-icon>

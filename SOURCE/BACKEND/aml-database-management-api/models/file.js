@@ -10,7 +10,7 @@ const FILE_SCHEMA = mongoose.Schema({
         }
     },
     type: String,
-    size: String,
+    size: Number,
     date: Date
 });
 

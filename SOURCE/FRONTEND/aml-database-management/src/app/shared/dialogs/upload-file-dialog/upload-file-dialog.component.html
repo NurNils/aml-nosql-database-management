@@ -1,27 +1,29 @@
 <h2 mat-dialog-title>{{ 'upload-file' | translate }}</h2>
-<mat-dialog-content>
-    <p>{{ 'upload-file-description' | translate }}</p>
-    <!-- Upload Form -->
-    <form [formGroup]="uploadFileFormGroup">
-        <!-- Name -->
-        <input
+<ng-container *ngIf="uploadFileFormGroup">
+
+    <mat-dialog-content>
+        <p>{{ 'upload-file-description' | translate }}</p>
+        <!-- Upload Form -->
+        <form [formGroup]="uploadFileFormGroup">
+            <!-- Name -->
+            <input
+                color="primary"
+                type="file"
+                accept="{{ acceptedFiles }}"
+                (change)="handleFileChange($event)"
+            />
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>{{ 'cancel' | translate }}</button>
+    <button
+            mat-raised-button
+            type="submit"
             color="primary"
-            formControlName="file"
-            type="file"
-            accept="{{ acceptedFiles }}"
-            (change)="handleFileChange($event)"
-        />
-    </form>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>{{ 'cancel' | translate }}</button>
-  <button
-        mat-raised-button
-        type="submit"
-        color="primary"
-        [disabled]="uploadFileFormGroup.invalid"
-        (click)="uploadFile()"
-      >
-        {{ 'upload' | translate }}
-    </button>
-</mat-dialog-actions>
+            [disabled]="uploadFileFormGroup.invalid"
+            (click)="uploadFile()"
+        >
+            {{ 'upload' | translate }}
+        </button>
+    </mat-dialog-actions>
+</ng-container>
