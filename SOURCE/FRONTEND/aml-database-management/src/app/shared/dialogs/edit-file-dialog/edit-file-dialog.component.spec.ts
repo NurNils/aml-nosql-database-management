@@ -8,9 +8,8 @@ describe('EditFileDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditFileDialogComponent ]
-    })
-    .compileComponents();
+      declarations: [EditFileDialogComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

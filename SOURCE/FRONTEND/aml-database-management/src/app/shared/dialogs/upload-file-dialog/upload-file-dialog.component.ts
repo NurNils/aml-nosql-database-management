@@ -9,7 +9,7 @@ import { environment } from '../../../../environments/environment';
 @Component({
   selector: 'app-upload-file-dialog',
   templateUrl: './upload-file-dialog.component.html',
-  styleUrls: ['./upload-file-dialog.component.scss']
+  styleUrls: ['./upload-file-dialog.component.scss'],
 })
 export class UploadFileDialogComponent implements OnInit {
   /** Max file size */
@@ -28,7 +28,7 @@ export class UploadFileDialogComponent implements OnInit {
     private formBuilder: FormBuilder,
     private apiService: ApiService,
     private snackBarService: SnackBarService
-  ) { }
+  ) {}
 
   /** Initialize Upload form */
   ngOnInit() {
@@ -36,7 +36,7 @@ export class UploadFileDialogComponent implements OnInit {
       base64: [null, Validators.required],
       name: [null, Validators.required],
       size: [null, [Validators.required, Validators.max(this.maxFileSize)]],
-      type: [null]
+      type: [null],
     });
   }
 
@@ -50,12 +50,12 @@ export class UploadFileDialogComponent implements OnInit {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
       reader.onload = (onLoad: any) => {
-        this.uploadFileFormGroup.patchValue({base64: onLoad.target.result});
+        this.uploadFileFormGroup.patchValue({ base64: onLoad.target.result });
       };
       this.uploadFileFormGroup.patchValue({
         name: event.target.files[0].name,
         size: event.target.files[0].size,
-        type: event.target.files[0].type
+        type: event.target.files[0].type,
       });
       reader.readAsDataURL(event.target.files[0]);
     }
@@ -68,7 +68,7 @@ export class UploadFileDialogComponent implements OnInit {
         base64: this.uploadFileFormGroup.get('base64').value,
         name: this.uploadFileFormGroup.get('name').value,
         size: this.uploadFileFormGroup.get('size').value,
-        type: this.uploadFileFormGroup.get('type').value
+        type: this.uploadFileFormGroup.get('type').value,
       };
       const res = await this.apiService.post('file', { file });
       if (res.status === IResponseStatus.success) {

@@ -8,7 +8,7 @@ import { SnackBarService } from 'src/app/services/snack-bar/snack-bar.service';
 @Component({
   selector: 'app-edit-file-dialog',
   templateUrl: './edit-file-dialog.component.html',
-  styleUrls: ['./edit-file-dialog.component.scss']
+  styleUrls: ['./edit-file-dialog.component.scss'],
 })
 export class EditFileDialogComponent implements OnInit {
   /** Edit file form group */
@@ -25,12 +25,11 @@ export class EditFileDialogComponent implements OnInit {
 
   /** Initialize Edit form */
   async ngOnInit() {
-
     const res = await this.apiService.get(`file/${this.data.id}`);
     if (res.status === IResponseStatus.success) {
       this.editFileFormGroup = this.formBuilder.group({
         name: [res.data.name, Validators.required],
-        content: [res.data.content, Validators.required]
+        content: [res.data.content, Validators.required],
       });
     } else {
       this.dialogRef.close();
@@ -48,7 +47,7 @@ export class EditFileDialogComponent implements OnInit {
     if (this.editFileFormGroup.valid) {
       const file = {
         content: this.editFileFormGroup.get('content').value,
-        name: this.editFileFormGroup.get('name').value
+        name: this.editFileFormGroup.get('name').value,
       };
       const res = await this.apiService.put(`file/${this.data.id}`, { file });
       if (res.status === IResponseStatus.success) {

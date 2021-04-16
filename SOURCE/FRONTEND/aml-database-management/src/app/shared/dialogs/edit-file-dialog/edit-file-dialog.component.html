@@ -3,43 +3,34 @@
 <mat-spinner *ngIf="!editFileFormGroup"></mat-spinner>
 
 <ng-container *ngIf="editFileFormGroup">
-
   <mat-dialog-content>
-      <p>{{ 'edit-file-description' | translate }}</p>
-      <!-- Edit Form -->
-      <form [formGroup]="editFileFormGroup">
-          <!-- Name -->
-          <mat-form-field appearance="fill">
-              <mat-label>{{ 'name' | translate }}</mat-label>
-              <input 
-                  matInput 
-                  color="primary" 
-                  formControlName="name"
-              />
-          </mat-form-field>
-          <br>
-          <!-- Content -->
-          <mat-form-field appearance="fill" class="contentField">
-              <mat-label>{{ 'content' | translate }}</mat-label>
-              <textarea class="contentTxtField"
-                  matInput 
-                  color="primary" 
-                  formControlName="content">
-              </textarea>
-          </mat-form-field>
-      </form>
+    <p>{{ 'edit-file-description' | translate }}</p>
+    <!-- Edit Form -->
+    <form [formGroup]="editFileFormGroup">
+      <!-- Name -->
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'name' | translate }}</mat-label>
+        <input matInput color="primary" formControlName="name" />
+      </mat-form-field>
+      <br />
+      <!-- Content -->
+      <mat-form-field appearance="fill" class="contentField">
+        <mat-label>{{ 'content' | translate }}</mat-label>
+        <textarea class="contentTxtField" matInput color="primary" formControlName="content">
+        </textarea>
+      </mat-form-field>
+    </form>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>{{ 'cancel' | translate }}</button>
     <button
-          mat-raised-button
-          type="submit"
-          color="primary"
-          [disabled]="editFileFormGroup.invalid"
-          (click)="editFile()"
-        >
-          {{ 'upload' | translate }}
-      </button>
+      mat-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="editFileFormGroup.invalid"
+      (click)="editFile()"
+    >
+      {{ 'upload' | translate }}
+    </button>
   </mat-dialog-actions>
-
 </ng-container>

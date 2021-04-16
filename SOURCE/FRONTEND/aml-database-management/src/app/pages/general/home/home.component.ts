@@ -21,11 +21,9 @@ export interface FileData {
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  maxFileSize = 1;
-  acceptedFiles = {}; 
   /** Displayed Columns */
   displayedColumns: string[] = ['id', '_id', 'name', 'size', 'date', 'actions'];
 
@@ -38,16 +36,24 @@ export class HomeComponent implements OnInit {
   /** MatSort ViewChild */
   @ViewChild(MatSort) sort: MatSort;
 
+  /** Filter form group */
+  filterFormGroup: FormGroup;
+
   /** Constructor */
-  constructor(private apiService: ApiService, 
-    private formBuilder: FormBuilder, 
+  constructor(
+    private apiService: ApiService,
+    private formBuilder: FormBuilder,
     private dialog: MatDialog,
-    private snackBarService: SnackBarService) {
+    private snackBarService: SnackBarService
+  ) {
     this.initData();
   }
 
   /** Initialize */
   ngOnInit() {
+    this.filterFormGroup = this.formBuilder.group({
+      filter: [null, [Validators.max(1000)]],
+    });
   }
 
   /** Initialize data */
@@ -72,7 +78,7 @@ export class HomeComponent implements OnInit {
 
   /** Clear filter */
   clearFilter() {
-    // TODO reset input field
+    this.filterFormGroup.patchValue({ filter: null });
     this.dataSource.filter = '';
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
@@ -82,23 +88,23 @@ export class HomeComponent implements OnInit {
   /** Upload file */
   async uploadFile() {
     const dialogRef = this.dialog.open(UploadFileDialogComponent, {
-      width: '500px'
-    }); 
-    dialogRef.afterClosed().subscribe(res=>{
-      if(res) {
+      width: '500px',
+    });
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res) {
         location.reload();
       }
     });
   }
-  
+
   /** Edit file */
   editFile(id: string) {
     const dialogRef = this.dialog.open(EditFileDialogComponent, {
       width: '90vw',
-      data: { id }
-    }); 
-    dialogRef.afterClosed().subscribe(res=>{
-      if(res) {
+      data: { id },
+    });
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res) {
         location.reload();
       }
     });
@@ -121,8 +127,11 @@ export class HomeComponent implements OnInit {
       const a = document.createElement('a');
       a.setAttribute('download', file.name);
       console.log(file);
-      a.setAttribute('href', window.URL.createObjectURL(new Blob([atob(file.base64)], { type: 'text/plain' })));
-      a.click()
+      a.setAttribute(
+        'href',
+        window.URL.createObjectURL(new Blob([atob(file.base64)], { type: 'text/plain' }))
+      );
+      a.click();
     }
   }
 }

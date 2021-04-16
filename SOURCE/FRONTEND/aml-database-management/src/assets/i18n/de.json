@@ -1,29 +1,29 @@
 {
-    "app": "AML NoSQL Datenbank Manangement",
-    "about-us": "Über uns",
-    "home": "Startseite",
-    "upload": "Hochladen",
-    "filter": "Filter",
-    "id": "ID",
-    "name": "Name",
-    "size": "Größe",
-    "date": "Datum",
-    "actions": "Aktionen",
-    "edit": "Editieren",
-    "download": "Download",
-    "delete": "Löschen",
-    "cancel": "Abbrechen",
-    "save": "Speichern",
-    "ok": "Ok",
-    "upload-file": "Datei hochladen",
-    "upload-file-description": "Hier können Sie Ihre AML Datei hochladen.",
-    "edit-file": "Datei editieren",
-    "edit-file-description": "Hier können Sie Ihre AML Datei editieren.",
-    "success": {
-        "file-uploaded": "Datei erfolgreich hochgeladen.",
-        "file-deleted": "Datei erfolgreich gelöscht."
-    },
-    "error": {
-        "file-not-found": "Datei wurde nicht gefunden"
-    }
+  "app": "AML NoSQL Datenbank Manangement",
+  "about-us": "Über uns",
+  "home": "Startseite",
+  "upload": "Hochladen",
+  "filter": "Filter",
+  "id": "ID",
+  "name": "Name",
+  "size": "Größe",
+  "date": "Datum",
+  "actions": "Aktionen",
+  "edit": "Editieren",
+  "download": "Download",
+  "delete": "Löschen",
+  "cancel": "Abbrechen",
+  "save": "Speichern",
+  "ok": "Ok",
+  "upload-file": "Datei hochladen",
+  "upload-file-description": "Hier können Sie Ihre AML Datei hochladen.",
+  "edit-file": "Datei editieren",
+  "edit-file-description": "Hier können Sie Ihre AML Datei editieren.",
+  "success": {
+    "file-uploaded": "Datei erfolgreich hochgeladen.",
+    "file-deleted": "Datei erfolgreich gelöscht."
+  },
+  "error": {
+    "file-not-found": "Datei wurde nicht gefunden"
+  }
 }

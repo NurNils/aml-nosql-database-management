@@ -10,7 +10,7 @@ export const environment = {
   form: {
     file: 'aml',
     maxSize: 2000000,
-    acceptedFiles: '.aml,.xml,.amlx'
+    acceptedFiles: '.aml,.xml,.amlx',
   },
   snackBar: {
     duration: 5000,

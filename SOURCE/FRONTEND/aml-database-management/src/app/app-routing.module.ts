@@ -14,22 +14,18 @@ const routes: Routes = [
       /** Sub pages */
       { path: '', component: HomeComponent },
       { path: 'about-us', component: AboutUsComponent },
-      { path: 'info', component: InfoComponent }
+      { path: 'info', component: InfoComponent },
     ],
   },
-  { 
-    path: '**', 
+  {
+    path: '**',
     redirectTo: '/',
-    pathMatch: 'full' 
-  }
-
+    pathMatch: 'full',
+  },
 ];
 
-
-
 @NgModule({
-  imports: [RouterModule.forRoot(routes)
-  ],
-  exports: [RouterModule,]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

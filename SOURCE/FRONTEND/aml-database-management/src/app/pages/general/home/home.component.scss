@@ -1,36 +1,30 @@
-table {
-  width: 100%;
-}
-
 .mat-form-field {
   font-size: 14px;
   width: 20%;
-  margin-left: 15px;
 }
 
-#uploadForm{
-  margin-right: 15px;
+#uploadButton {
   float: right;
 }
-#idCol{
+
+#table {
+  margin: 20px auto;
+  table {
+    width: 100%;
+  }
+}
+
+#idCol {
   display: none !important;
   visibility: hidden;
-}
-
-#download-file-btn{
-  text-decoration: none;
-  color: black;
-}
-
-#home{
-  margin-left: 15px;
 }
 
 th {
   font-weight: bold;
 }
 
-td, th {
+td,
+th {
   width: 25%;
   font-size: 15px;
 }

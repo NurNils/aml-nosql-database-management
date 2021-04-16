@@ -81,6 +81,6 @@ import { UploadFileDialogComponent } from './shared/dialogs/upload-file-dialog/u
     MatSortModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,20 +1,24 @@
 <p>
-    <mat-toolbar color="primary" id="navbar">
-        <img id="logo" src="assets/images/logo.jpg" alt="AML NoSQL Database Manangement Logo" width="45px">
-        <span>{{ 'app' | translate }}</span>
-        <span class="spacer"></span>
-        <!-- Language Wrapper -->
-        <app-language-wrapper></app-language-wrapper>
-        <!-- Github -->
-        <a [routerLink]="['/info']" class="link">
-            <button mat-icon-button class="example-icon favorite-icon">
-                <mat-icon>info</mat-icon>
-            </button>
-        </a>
-        <!-- Home -->
-        <a class="link" [routerLink]="['/']">{{ 'home' | translate }}</a>
-        <!-- About Us -->
-        <a class="link" [routerLink]="['/about-us']">{{ 'about-us' | translate }}</a>
-    </mat-toolbar>
+  <mat-toolbar color="primary" id="navbar">
+    <img
+      id="logo"
+      src="assets/images/logo.jpg"
+      alt="AML NoSQL Database Manangement Logo"
+      width="45px"
+    />
+    <span>{{ 'app' | translate }}</span>
+    <span class="spacer"></span>
+    <!-- Language Wrapper -->
+    <app-language-wrapper></app-language-wrapper>
+    <!-- Github -->
+    <a [routerLink]="['/info']" class="link">
+      <button mat-icon-button class="example-icon favorite-icon">
+        <mat-icon>info</mat-icon>
+      </button>
+    </a>
+    <!-- Home -->
+    <a class="link" [routerLink]="['/']">{{ 'home' | translate }}</a>
+    <!-- About Us -->
+    <a class="link" [routerLink]="['/about-us']">{{ 'about-us' | translate }}</a>
+  </mat-toolbar>
 </p>
-      
