@@ -7,7 +7,16 @@
 <!-- Filter -->
 <mat-form-field>
     <mat-label>{{ 'filter' | translate }}</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="example.aml" #input>
+    <input matInput id="apply-filter" (keyup)="applyFilter($event)" placeholder="example.aml" #input>
+    <button
+          type="button"
+          *ngIf="dataSource.filter"
+          matSuffix
+          mat-icon-button
+          (click)="clearFilter()"
+    >
+        <mat-icon>close</mat-icon>
+    </button>
 </mat-form-field>
   
 <div class="mat-elevation-z8">

@@ -70,11 +70,19 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  /** Clear filter */
+  clearFilter() {
+    // TODO reset input field
+    this.dataSource.filter = '';
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
   /** Upload file */
   async uploadFile() {
     const dialogRef = this.dialog.open(UploadFileDialogComponent, {
-      height: '90vh',
-      width: '90vw'
+      width: '500px'
     }); 
     dialogRef.afterClosed().subscribe(res=>{
       if(res) {
@@ -86,7 +94,6 @@ export class HomeComponent implements OnInit {
   /** Edit file */
   editFile(id: string) {
     const dialogRef = this.dialog.open(EditFileDialogComponent, {
-      height: '90vh',
       width: '90vw',
       data: { id }
     }); 

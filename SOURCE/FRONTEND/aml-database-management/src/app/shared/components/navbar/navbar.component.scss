@@ -1,13 +1,18 @@
-.example-spacer {
+.spacer {
     flex: 1 1 auto;
 }
 
 #logo {
     margin-right: 5px;
+    border-radius: 100%;
 }
 
 .link {
     padding: 0 5px;
     text-decoration: none;
     color: black;
+}
+
+#navbar {
+    color: white;
 }

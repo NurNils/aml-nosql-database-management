@@ -1,4 +1,7 @@
 <h2 mat-dialog-title>{{ 'edit-file' | translate }}</h2>
+<!-- Loading spinner -->
+<mat-spinner *ngIf="!editFileFormGroup"></mat-spinner>
+
 <ng-container *ngIf="editFileFormGroup">
 
   <mat-dialog-content>
