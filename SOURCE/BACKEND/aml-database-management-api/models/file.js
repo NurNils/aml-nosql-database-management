@@ -18,7 +18,7 @@ const FILE = module.exports = mongoose.model('File', FILE_SCHEMA);
 
 /** Get files */
 module.exports.getFiles = (callback, limit) => {
-    FILE.find(callback).limit(limit);
+    FILE.find(callback).limit(limit).sort({date: -1});
 };
 
 /** Delete file */

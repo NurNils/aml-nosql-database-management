@@ -9,9 +9,9 @@ import { SnackBarService } from '../../../services/snack-bar/snack-bar.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditFileDialogComponent } from '../../../shared/dialogs/edit-file-dialog/edit-file-dialog.component';
 import { UploadFileDialogComponent } from '../../../shared/dialogs/upload-file-dialog/upload-file-dialog.component';
-import { ifError } from 'assert';
 
 export interface FileData {
+  _id: string;
   id: string;
   name: string;
   size: string;
@@ -92,7 +92,9 @@ export class HomeComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((res) => {
       if (res) {
-        location.reload();
+        let temp = this.dataSource.data;
+        temp.push(res);
+        this.dataSource.data = temp;
       }
     });
   }
@@ -105,6 +107,13 @@ export class HomeComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((res) => {
       if (res) {
+        let temp = this.dataSource.data;
+        console.log(temp[temp.findIndex(e => e._id == res.id)]);
+        let newObj = {name: res.name, size: res.size, id: res.id, _id: res._id, date: res.date}
+        temp[temp.findIndex(e => e._id == res.id)] = newObj;
+        this.dataSource.data = temp;
+        console.log(this.dataSource.data[this.dataSource.data.findIndex(e => e._id == res.id)]);
+        this.dataSource = new MatTableDataSource(this.dataSource.data);
         location.reload();
       }
     });
@@ -115,18 +124,17 @@ export class HomeComponent implements OnInit {
     const res = await this.apiService.delete(`file/${id}`);
     if (res.status === IResponseStatus.success) {
       this.snackBarService.openDefaultSnackBar('success.file-deleted');
-      location.reload();
+      this.dataSource.data = this.dataSource.data.filter(e => e._id != id);
     }
   }
 
-  /** Download file */
+  /* Download file */
   async downloadFile(id: string) {
     const res = await this.apiService.get(`file/${id}/download`);
     if (res.status === IResponseStatus.success) {
       const file = res.data;
       const a = document.createElement('a');
       a.setAttribute('download', file.name);
-      console.log(file);
       a.setAttribute(
         'href',
         window.URL.createObjectURL(new Blob([atob(file.base64)], { type: 'text/plain' }))

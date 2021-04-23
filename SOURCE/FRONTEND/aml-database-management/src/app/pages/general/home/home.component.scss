@@ -9,9 +9,18 @@
 
 #table {
   margin: 20px auto;
+  max-height: 80vh;
   table {
     width: 100%;
   }
+}
+
+.mat-row {
+  height: 7vh;
+}
+
+.actions-row {
+  display: flex;
 }
 
 #idCol {
@@ -25,6 +34,6 @@ th {
 
 td,
 th {
-  width: 25%;
+  width: 23%;
   font-size: 15px;
 }
