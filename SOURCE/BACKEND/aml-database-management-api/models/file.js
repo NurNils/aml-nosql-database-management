@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 /** File Schema */
 const FILE_SCHEMA = mongoose.Schema({
     base64: String,
+    id: Number,
     name: {
         type: String,
         index: {
@@ -39,7 +40,14 @@ module.exports.addFile = (file, callback) => {
     if(file.date == null) {
         file.date = new Date();
     }
-    FILE.create(file, callback);
+    FILE.find((err, file2) => {
+        if(err || file2.length == 0) {
+            file.id = 1;
+        } else {
+            file.id = file2[0].id + 1;
+        }
+        FILE.create(file, callback);
+    }).limit(1).sort({$natural:-1});
 };
 
 /** Update file */
