@@ -1,9 +1,10 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../../../services/api/api.service';
 import { IResponseStatus } from 'src/app/interfaces/response.interface';
 import { SnackBarService } from 'src/app/services/snack-bar/snack-bar.service';
+import { CodemirrorComponent } from '@ctrl/ngx-codemirror';
 
 @Component({
   selector: 'app-edit-file-dialog',
@@ -11,9 +12,27 @@ import { SnackBarService } from 'src/app/services/snack-bar/snack-bar.service';
   styleUrls: ['./edit-file-dialog.component.scss'],
 })
 export class EditFileDialogComponent implements OnInit {
+  
   /** Edit file form group */
   editFileFormGroup: FormGroup;
-  public text: string;
+
+  /** Code mirror component */
+  @ViewChild('codeMirror') private codeEditorCmp: CodemirrorComponent;
+  
+  /** Code mirror options */
+  codeMirrorOptions: any = {
+    mode: 'application/xml',
+    lineNumbers: true,
+    lineWrapping: true,
+    foldGutter: true,
+    gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter', 'CodeMirror-lint-markers'],
+    autoCloseBrackets: true,
+    matchBrackets: true,
+    lint: true
+  };
+
+  /** Content for code mirror */
+  content: string;
 
   /** Constructor */
   constructor(
@@ -32,9 +51,9 @@ export class EditFileDialogComponent implements OnInit {
       if (res.status === IResponseStatus.success) {
         this.editFileFormGroup = this.formBuilder.group({
           name: [res.data.name, Validators.required],
-          content: [res.data.content, Validators.required],
         });
-        this.text = res.data.content;
+        this.content = res.data.content;
+        setTimeout(() => { this.codeEditorCmp.codeMirror.refresh() }, 100);
       } else {
         this.dialogRef.close();
         this.snackBarService.openDefaultSnackBar('error.file-not-found');
@@ -43,7 +62,6 @@ export class EditFileDialogComponent implements OnInit {
       /** Create empty form group */
       this.editFileFormGroup = this.formBuilder.group({
         name: [null, Validators.required],
-        content: [null, Validators.required],
       });
     }
   }
@@ -57,8 +75,8 @@ export class EditFileDialogComponent implements OnInit {
   async editFile() {
     if (this.editFileFormGroup.valid) {
       const file = {
-        content: this.editFileFormGroup.get('content').value,
         name: this.editFileFormGroup.get('name').value,
+        content: this.content,
       };
       if(this.data?.id) {
         const res = await this.apiService.put(`file/${this.data.id}`, { file });
