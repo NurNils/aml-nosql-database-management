@@ -3,6 +3,8 @@
   "about-us": "About Us",
   "home": "Home",
   "upload": "Upload",
+  "new-file": "Create file",
+  "new-file-description": "Here you can create a new file.",
   "filter": "Filter",
   "id": "ID",
   "name": "Name",

@@ -3,15 +3,16 @@
   width: 20%;
 }
 
-#uploadButton {
+#uploadButton, #newFileButton {
   float: right;
+  margin-left: 5px;
 }
 
 #table {
   margin: 20px auto;
   max-height: 80vh;
   table {
-    width: 100%;
+    width: 100% !important;
   }
 }
 

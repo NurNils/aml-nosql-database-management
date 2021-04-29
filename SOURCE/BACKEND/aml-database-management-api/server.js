@@ -79,6 +79,21 @@ app.post('/file', (req, res) => {
     } else {
       res.status(200).send({ status: 'error', message: 'File type is not allowed' });
     }
+  } else if (file && file.content && file.name) {  
+    file.base64 = new Buffer(file.content).toString('base64');
+    delete file.content;
+    file.date = new Date();
+    file.size = Buffer.from(file.base64, 'base64').length;
+    FILE.addFile(
+      file,
+      (err, file) => {
+        if (!err && file) {
+          res.status(200).send({ status: 'success', data: file });
+        } else {
+          res.status(200).send({ status: 'error', message: 'Unable to save new file' });
+        }
+      }
+    );
   } else {
     res.status(200).send({ status: 'error', message: 'No file was uploaded. Please try again' });
   }
@@ -87,7 +102,7 @@ app.post('/file', (req, res) => {
 app.get('/file/:id', (req, res) => {
   FILE.getFile(req.params.id, (err, file) => {
     if (!err && file) {
-      let newObj = {name: file.name, content: Buffer(file.base64, 'base64').toString('ascii')}
+      let newObj = {name: file.name, content: Buffer.from(file.base64, 'base64').toString('ascii')}
       res.status(200).send({ status: 'success', data: newObj });
     } else {
       res.status(200).send({ status: 'error', message: 'Unable to get file' });
@@ -107,7 +122,7 @@ app.get(`/file/:id/download`, (req, res) => {
  
 app.put('/file/:id', (req, res) => {
   let file = req.body.file;
-  file.base64 = new Buffer(file.content).toString('base64');
+  file.base64 = new Buffer.from(file.content).toString('base64');
   delete file.content;
   file.date = new Date();
   file.size = Buffer.from(file.base64, 'base64').length;
