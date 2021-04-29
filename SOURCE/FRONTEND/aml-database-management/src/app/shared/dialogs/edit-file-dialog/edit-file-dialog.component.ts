@@ -13,6 +13,7 @@ import { SnackBarService } from 'src/app/services/snack-bar/snack-bar.service';
 export class EditFileDialogComponent implements OnInit {
   /** Edit file form group */
   editFileFormGroup: FormGroup;
+  public text: string;
 
   /** Constructor */
   constructor(
@@ -33,6 +34,7 @@ export class EditFileDialogComponent implements OnInit {
           name: [res.data.name, Validators.required],
           content: [res.data.content, Validators.required],
         });
+        this.text = res.data.content;
       } else {
         this.dialogRef.close();
         this.snackBarService.openDefaultSnackBar('error.file-not-found');

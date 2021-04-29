@@ -16,6 +16,14 @@
       <!-- Content -->
       <mat-form-field appearance="fill" class="contentField">
         <mat-label>{{ 'content' | translate }}</mat-label>
+        <ngx-codemirror
+          [(ngModel)]="this.text"
+          [options]="{
+            lineNumbers: true,
+            theme: 'material',
+            mode: 'xml'
+          }"
+        ></ngx-codemirror>
         <textarea class="contentTxtField" matInput color="primary" formControlName="content">
         </textarea>
       </mat-form-field>

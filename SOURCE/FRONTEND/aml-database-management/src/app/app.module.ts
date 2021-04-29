@@ -29,6 +29,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LanguageWrapperComponent } from './shared/components/language-wrapper/language-wrapper.component';
 import { InfoComponent } from './pages/info/info.component';
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 
 import { EditFileDialogComponent } from './shared/dialogs/edit-file-dialog/edit-file-dialog.component';
 import { UploadFileDialogComponent } from './shared/dialogs/upload-file-dialog/upload-file-dialog.component';
@@ -50,6 +51,7 @@ import { UploadFileDialogComponent } from './shared/dialogs/upload-file-dialog/u
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    CodemirrorModule,
     FormsModule,
     HttpClientModule,
     TranslateModule.forRoot({
