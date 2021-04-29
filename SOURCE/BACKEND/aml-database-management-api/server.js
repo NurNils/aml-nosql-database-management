@@ -45,8 +45,8 @@ app.get('/file', (req, res) => {
   FILE.getFiles((err, files) => {
     if (!err && files) {
       let dataSource = [];
-      files.forEach((f, i) => {
-        dataSource.push({id: i+1, _id: f._id , name: f.name, date: f.date, size: f.size});
+      files.forEach(f => {
+        dataSource.push({id: f.id, _id: f._id , name: f.name, date: f.date, size: f.size});
       });
       
       res.status(200).send({ status: 'success', data: dataSource });
@@ -83,6 +83,8 @@ app.post('/file', (req, res) => {
     delete file.content;
     file.date = new Date();
     file.size = Buffer.from(file.base64, 'base64').length;
+    file.type = 'application/xml';  
+    file.name += '.aml';  
     FILE.addFile(
       file,
       (err, file) => {
