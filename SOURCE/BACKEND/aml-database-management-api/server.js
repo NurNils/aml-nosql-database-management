@@ -72,7 +72,6 @@ app.post('/file', (req, res) => {
           savedFile.base64 = null;
           res.status(200).send({ status: 'success', data: savedFile });
         } else {
-          console.log(err.message)
           res.status(200).send({ status: 'error', message: 'Unable to add file' });
         }
       });

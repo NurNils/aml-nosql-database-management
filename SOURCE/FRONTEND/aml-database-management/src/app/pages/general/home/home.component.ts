@@ -112,6 +112,7 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
   /** Edit file */
   editFile(id: string) {
     const dialogRef = this.dialog.open(EditFileDialogComponent, {
@@ -120,14 +121,14 @@ export class HomeComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((res) => {
       if (res) {
-        let temp = this.dataSource.data;
-        console.log(temp[temp.findIndex(e => e._id == res.id)]);
-        let newObj = {name: res.name, size: res.size, id: res.id, _id: res._id, date: res.date}
-        temp[temp.findIndex(e => e._id == res.id)] = newObj;
-        this.dataSource.data = temp;
-        console.log(this.dataSource.data[this.dataSource.data.findIndex(e => e._id == res.id)]);
-        this.dataSource = new MatTableDataSource(this.dataSource.data);
-        location.reload();
+        for(let data of this.dataSource.data) {
+          if(data._id === res._id) {
+            data.id = res.id;
+            data.name = res.name;
+            data.size = res.size;
+            data.date = res.date;
+          }
+        }
       }
     });
   }
