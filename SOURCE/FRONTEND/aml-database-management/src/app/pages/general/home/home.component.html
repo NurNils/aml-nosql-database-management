@@ -1,5 +1,9 @@
 <h1>{{ 'home' | translate }}</h1>
 
+<button mat-raised-button color="primary" (click)="createFile()" id="newFileButton">
+  {{ 'new-file' | translate }}
+</button>
+
 <button mat-raised-button color="primary" (click)="uploadFile()" id="uploadButton">
   {{ 'upload' | translate }}
 </button>

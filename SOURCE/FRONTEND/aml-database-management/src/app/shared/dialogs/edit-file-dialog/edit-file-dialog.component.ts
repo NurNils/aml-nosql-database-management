@@ -25,15 +25,24 @@ export class EditFileDialogComponent implements OnInit {
 
   /** Initialize Edit form */
   async ngOnInit() {
-    const res = await this.apiService.get(`file/${this.data.id}`);
-    if (res.status === IResponseStatus.success) {
-      this.editFileFormGroup = this.formBuilder.group({
-        name: [res.data.name, Validators.required],
-        content: [res.data.content, Validators.required],
-      });
+    if(this.data?.id) {
+      /** Load existing data */
+      const res = await this.apiService.get(`file/${this.data.id}`);
+      if (res.status === IResponseStatus.success) {
+        this.editFileFormGroup = this.formBuilder.group({
+          name: [res.data.name, Validators.required],
+          content: [res.data.content, Validators.required],
+        });
+      } else {
+        this.dialogRef.close();
+        this.snackBarService.openDefaultSnackBar('error.file-not-found');
+      }
     } else {
-      this.dialogRef.close();
-      this.snackBarService.openDefaultSnackBar('error.file-not-found');
+      /** Create empty form group */
+      this.editFileFormGroup = this.formBuilder.group({
+        name: [null, Validators.required],
+        content: [null, Validators.required],
+      });
     }
   }
 
@@ -49,12 +58,22 @@ export class EditFileDialogComponent implements OnInit {
         content: this.editFileFormGroup.get('content').value,
         name: this.editFileFormGroup.get('name').value,
       };
-      const res = await this.apiService.put(`file/${this.data.id}`, { file });
-      if (res.status === IResponseStatus.success) {
-        const savedFile = res.data;
-        this.snackBarService.openDefaultSnackBar('success.file-uploaded');
-        this.editFileFormGroup.reset();
-        this.dialogRef.close(savedFile);
+      if(this.data?.id) {
+        const res = await this.apiService.put(`file/${this.data.id}`, { file });
+        if (res.status === IResponseStatus.success) {
+          const savedFile = res.data;
+          this.snackBarService.openDefaultSnackBar('success.file-uploaded');
+          this.editFileFormGroup.reset();
+          this.dialogRef.close(savedFile);
+        }
+      } else {
+        const res = await this.apiService.post(`file`, { file });
+        if (res.status === IResponseStatus.success) {
+          const savedFile = res.data;
+          this.snackBarService.openDefaultSnackBar('success.file-uploaded');
+          this.editFileFormGroup.reset();
+          this.dialogRef.close(savedFile);
+        }
       }
     }
   }

@@ -1,10 +1,10 @@
-<h2 mat-dialog-title>{{ 'edit-file' | translate }}</h2>
+<h2 mat-dialog-title>{{ (data?.id ? 'edit-file' : 'new-file') | translate }}</h2>
 <!-- Loading spinner -->
 <mat-spinner *ngIf="!editFileFormGroup"></mat-spinner>
 
 <ng-container *ngIf="editFileFormGroup">
   <mat-dialog-content>
-    <p>{{ 'edit-file-description' | translate }}</p>
+    <p>{{ (data?.id ? 'edit-file-description' : 'new-file-description') | translate }}</p>
     <!-- Edit Form -->
     <form [formGroup]="editFileFormGroup">
       <!-- Name -->

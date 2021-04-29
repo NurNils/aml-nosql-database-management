@@ -39,6 +39,9 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+table {
+  width: 100% !important;
+}
 
 // Material Overwrites
 mat-dialog-container {
@@ -47,3 +50,4 @@ mat-dialog-container {
     max-width: 400px;
   }
 }
+

@@ -99,6 +99,19 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  /** Create file */
+  async createFile() {
+    const dialogRef = this.dialog.open(EditFileDialogComponent, {
+      width: '500px',
+    });
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res) {
+        let temp = this.dataSource.data;
+        temp.push(res);
+        this.dataSource.data = temp;
+      }
+    });
+  }
   /** Edit file */
   editFile(id: string) {
     const dialogRef = this.dialog.open(EditFileDialogComponent, {

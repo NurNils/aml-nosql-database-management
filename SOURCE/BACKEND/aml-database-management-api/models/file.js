@@ -24,7 +24,7 @@ module.exports.getFiles = (callback, limit) => {
 
 /** Delete file */
 module.exports.deleteFile = (_id, callback) => {
-    FILE.remove({ _id }, callback);
+    FILE.deleteOne({ _id }, callback);
 };
 
 /** Get file */
