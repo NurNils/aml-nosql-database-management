@@ -102,7 +102,7 @@ export class HomeComponent implements OnInit {
   /** Create file */
   async createFile() {
     const dialogRef = this.dialog.open(EditFileDialogComponent, {
-      width: '500px',
+      width: '90vw',
     });
     dialogRef.afterClosed().subscribe((res) => {
       if (res) {

@@ -84,6 +84,8 @@ app.post('/file', (req, res) => {
     delete file.content;
     file.date = new Date();
     file.size = Buffer.from(file.base64, 'base64').length;
+    file.type = 'application/xml';  
+    file.name += '.aml';  
     FILE.addFile(
       file,
       (err, file) => {
