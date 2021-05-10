@@ -21,6 +21,7 @@
   "upload-file-description": "Hier können Sie Ihre AML Datei hochladen.",
   "edit-file": "Datei editieren",
   "edit-file-description": "Hier können Sie Ihre AML Datei editieren.",
+  "file-delete-confirm": "Datei wirklich löschen?",
   "success": {
     "file-uploaded": "Datei erfolgreich hochgeladen.",
     "file-deleted": "Datei erfolgreich gelöscht."

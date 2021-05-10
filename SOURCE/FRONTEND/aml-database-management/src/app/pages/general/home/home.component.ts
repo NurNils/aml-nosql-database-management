@@ -9,6 +9,7 @@ import { SnackBarService } from '../../../services/snack-bar/snack-bar.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditFileDialogComponent } from '../../../shared/dialogs/edit-file-dialog/edit-file-dialog.component';
 import { UploadFileDialogComponent } from '../../../shared/dialogs/upload-file-dialog/upload-file-dialog.component';
+import { TranslateService } from '@ngx-translate/core';
 
 export interface FileData {
   _id: string;
@@ -44,7 +45,8 @@ export class HomeComponent implements OnInit {
     private apiService: ApiService,
     private formBuilder: FormBuilder,
     private dialog: MatDialog,
-    private snackBarService: SnackBarService
+    private snackBarService: SnackBarService,
+    private translateService: TranslateService
   ) {
     this.initData();
   }
@@ -135,10 +137,12 @@ export class HomeComponent implements OnInit {
 
   /** Delete file */
   async deleteFile(id: string) {
-    const res = await this.apiService.delete(`file/${id}`);
-    if (res.status === IResponseStatus.success) {
-      this.snackBarService.openDefaultSnackBar('success.file-deleted');
-      this.dataSource.data = this.dataSource.data.filter(e => e._id != id);
+    if(confirm(this.translateService.instant('file-delete-confirm'))) {
+      const res = await this.apiService.delete(`file/${id}`);
+      if (res.status === IResponseStatus.success) {
+        this.snackBarService.openSnackbarSuccess('success.file-deleted');
+        this.dataSource.data = this.dataSource.data.filter(e => e._id != id);
+      }
     }
   }
 

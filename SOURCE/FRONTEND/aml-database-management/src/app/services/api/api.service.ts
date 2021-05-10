@@ -39,7 +39,7 @@ export class ApiService {
         throw new Error(`${response.status}${message}`);
          */
         if (response.message) {
-          this.snackBarService.openDefaultSnackBar(response.message, false, 'mat-snackbar-error');
+          this.snackBarService.openSnackbarError(response.message, false);
         }
       }
 

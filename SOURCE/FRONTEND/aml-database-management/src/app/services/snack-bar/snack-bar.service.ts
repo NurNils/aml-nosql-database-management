@@ -10,6 +10,24 @@ export class SnackBarService {
   /** Constructor */
   constructor(private snackBar: MatSnackBar, private translate: TranslateService) {}
 
+  /** Open a snack bar with success styling */
+  openSnackbarSuccess(translationKey: string, withoutDuration?: boolean) {
+    this.openDefaultSnackBar(
+      this.translate.instant(translationKey),
+      withoutDuration,
+      'mat-snackbar-success'
+    );
+  }
+
+  /** Open a snack bar with error styling */
+  openSnackbarError(translationKey: string, withoutDuration?: boolean) {
+    this.openDefaultSnackBar(
+      this.translate.instant(translationKey),
+      withoutDuration,
+      'mat-snackbar-error'
+    );
+  }
+
   /** Open a snack bar with default style and settings */
   openDefaultSnackBar(translationKey: string, withoutDuration?: boolean, pannelClass?: string) {
     this.openSnackBar(

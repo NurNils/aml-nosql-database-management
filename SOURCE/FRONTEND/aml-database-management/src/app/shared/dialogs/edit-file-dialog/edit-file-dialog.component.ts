@@ -56,7 +56,7 @@ export class EditFileDialogComponent implements OnInit {
         setTimeout(() => { this.codeEditorCmp.codeMirror.refresh() }, 100);
       } else {
         this.dialogRef.close();
-        this.snackBarService.openDefaultSnackBar('error.file-not-found');
+        this.snackBarService.openSnackbarSuccess('error.file-not-found');
       }
     } else {
       /** Create empty form group */
@@ -82,7 +82,7 @@ export class EditFileDialogComponent implements OnInit {
         const res = await this.apiService.put(`file/${this.data.id}`, { file });
         if (res.status === IResponseStatus.success) {
           const savedFile = res.data;
-          this.snackBarService.openDefaultSnackBar('success.file-uploaded');
+          this.snackBarService.openSnackbarSuccess('success.file-uploaded');
           this.editFileFormGroup.reset();
           this.dialogRef.close(savedFile);
         }
@@ -90,7 +90,7 @@ export class EditFileDialogComponent implements OnInit {
         const res = await this.apiService.post(`file`, { file });
         if (res.status === IResponseStatus.success) {
           const savedFile = res.data;
-          this.snackBarService.openDefaultSnackBar('success.file-uploaded');
+          this.snackBarService.openSnackbarSuccess('success.file-uploaded');
           this.editFileFormGroup.reset();
           this.dialogRef.close(savedFile);
         }

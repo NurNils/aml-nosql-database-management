@@ -73,7 +73,7 @@ export class UploadFileDialogComponent implements OnInit {
       const res = await this.apiService.post('file', { file });
       if (res.status === IResponseStatus.success) {
         const savedFile = res.data;
-        this.snackBarService.openDefaultSnackBar('success.file-uploaded');
+        this.snackBarService.openSnackbarSuccess('success.file-uploaded');
         this.uploadFileFormGroup.reset();
         this.dialogRef.close(savedFile);
       }
