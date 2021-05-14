@@ -34,7 +34,7 @@
 
 <div class="mat-elevation-z8" #table>
   <!-- Table -->
-  <table mat-table [dataSource]="dataSource" matSort matSortActive="date" matSortDirection="desc" >
+  <table mat-table [dataSource]="dataSource" matSort matSortActive="date" matSortDirection="desc">
     <!-- ID Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'id' | translate }}</th>
@@ -75,11 +75,19 @@
             <mat-icon>edit</mat-icon>
           </button>
           <!-- Download -->
-          <button mat-icon-button matTooltip="{{ 'download' | translate }}" (click)="downloadFile(row._id)">
+          <button
+            mat-icon-button
+            matTooltip="{{ 'download' | translate }}"
+            (click)="downloadFile(row._id)"
+          >
             <mat-icon>get_app</mat-icon>
           </button>
           <!-- Delete -->
-          <button mat-icon-button matTooltip="{{ 'delete' | translate }}" (click)="deleteFile(row._id)">
+          <button
+            mat-icon-button
+            matTooltip="{{ 'delete' | translate }}"
+            (click)="deleteFile(row._id)"
+          >
             <mat-icon>delete</mat-icon>
           </button>
         </div>

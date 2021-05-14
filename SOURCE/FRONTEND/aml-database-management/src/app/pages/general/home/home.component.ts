@@ -123,8 +123,8 @@ export class HomeComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((res) => {
       if (res) {
-        for(let data of this.dataSource.data) {
-          if(data._id === res._id) {
+        for (let data of this.dataSource.data) {
+          if (data._id === res._id) {
             data.id = res.id;
             data.name = res.name;
             data.size = res.size;
@@ -137,11 +137,11 @@ export class HomeComponent implements OnInit {
 
   /** Delete file */
   async deleteFile(id: string) {
-    if(confirm(this.translateService.instant('file-delete-confirm'))) {
+    if (confirm(this.translateService.instant('file-delete-confirm'))) {
       const res = await this.apiService.delete(`file/${id}`);
       if (res.status === IResponseStatus.success) {
         this.snackBarService.openSnackbarSuccess('success.file-deleted');
-        this.dataSource.data = this.dataSource.data.filter(e => e._id != id);
+        this.dataSource.data = this.dataSource.data.filter((e) => e._id != id);
       }
     }
   }

@@ -25,25 +25,16 @@
       }
     }
   ],
-  "schemes": [
-    "https",
-    "http"
-  ],
+  "schemes": ["https", "http"],
   "paths": {
     "/file": {
       "get": {
-        "tags": [
-          "file"
-        ],
+        "tags": ["file"],
         "summary": "Get all existing files",
         "description": "Get all existing files",
         "operationId": "getFiles",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "Files found",
@@ -63,18 +54,12 @@
         }
       },
       "post": {
-        "tags": [
-          "file"
-        ],
+        "tags": ["file"],
         "summary": "Add a new file",
         "description": "Upload an AML file",
         "operationId": "addFile",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "body",
@@ -107,15 +92,11 @@
     },
     "/file/{id}": {
       "get": {
-        "tags": [
-          "file"
-        ],
+        "tags": ["file"],
         "summary": "Finds file by id",
         "description": "Find file by id",
         "operationId": "getFile",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "path",
@@ -144,18 +125,12 @@
         }
       },
       "put": {
-        "tags": [
-          "file"
-        ],
+        "tags": ["file"],
         "summary": "Update an existing file",
         "description": "",
         "operationId": "updateFile",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "path",
@@ -184,18 +159,12 @@
         }
       },
       "delete": {
-        "tags": [
-          "file"
-        ],
+        "tags": ["file"],
         "summary": "Delete an existing file",
         "description": "",
         "operationId": "deleteFile",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "path",
@@ -228,10 +197,7 @@
   "definitions": {
     "File": {
       "type": "object",
-      "required": [
-        "name",
-        "content"
-      ],
+      "required": ["name", "content"],
       "properties": {
         "name": {
           "type": "string",
@@ -245,10 +211,7 @@
     },
     "ApiResponse": {
       "type": "object",
-      "required": [
-        "status",
-        "code"
-      ],
+      "required": ["status", "code"],
       "properties": {
         "status": {
           "type": "string"

@@ -12,13 +12,12 @@ import { CodemirrorComponent } from '@ctrl/ngx-codemirror';
   styleUrls: ['./edit-file-dialog.component.scss'],
 })
 export class EditFileDialogComponent implements OnInit {
-  
   /** Edit file form group */
   editFileFormGroup: FormGroup;
 
   /** Code mirror component */
   @ViewChild('codeMirror') private codeEditorCmp: CodemirrorComponent;
-  
+
   /** Code mirror options */
   codeMirrorOptions: any = {
     mode: 'application/xml',
@@ -28,7 +27,7 @@ export class EditFileDialogComponent implements OnInit {
     gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter', 'CodeMirror-lint-markers'],
     autoCloseBrackets: true,
     matchBrackets: true,
-    lint: true
+    lint: true,
   };
 
   /** Content for code mirror */
@@ -45,7 +44,7 @@ export class EditFileDialogComponent implements OnInit {
 
   /** Initialize Edit form */
   async ngOnInit() {
-    if(this.data?.id) {
+    if (this.data?.id) {
       /** Load existing data */
       const res = await this.apiService.get(`file/${this.data.id}`);
       if (res.status === IResponseStatus.success) {
@@ -53,7 +52,9 @@ export class EditFileDialogComponent implements OnInit {
           name: [res.data.name, Validators.required],
         });
         this.content = res.data.content;
-        setTimeout(() => { this.codeEditorCmp.codeMirror.refresh() }, 100);
+        setTimeout(() => {
+          this.codeEditorCmp.codeMirror.refresh();
+        }, 100);
       } else {
         this.dialogRef.close();
         this.snackBarService.openSnackbarSuccess('error.file-not-found');
@@ -78,7 +79,7 @@ export class EditFileDialogComponent implements OnInit {
         name: this.editFileFormGroup.get('name').value,
         content: this.content,
       };
-      if(this.data?.id) {
+      if (this.data?.id) {
         const res = await this.apiService.put(`file/${this.data.id}`, { file });
         if (res.status === IResponseStatus.success) {
           const savedFile = res.data;
