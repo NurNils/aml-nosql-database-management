@@ -4,21 +4,55 @@
   margin-top: 100px;
 }
 
+#github {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 26px;
+  margin: 40px 0;
+}
+
 #team {
   margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   .member {
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
     h3 {
       font-size: 22px;
       font-weight: bold;
+      margin: 0;
     }
     p {
-      font-size: 20px;
+      font-size: 16px;
+      margin: 0;
+    }
+    a {
+      font-size: 12px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
     }
     .teamImg {
-      width: 250px;
+      width: 300px;
+    }
+    .email {
+      font-size: 14px;
+      text-decoration: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  #team {
+    flex-direction: column;
+    .member {
+      flex: 1;
+      margin: 10px 0;
     }
   }
 }

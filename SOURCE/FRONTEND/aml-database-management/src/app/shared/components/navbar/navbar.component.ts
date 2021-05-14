@@ -9,6 +9,7 @@
  * Last modified  : 14.05.2021
  */
 import { Component } from '@angular/core';
+import { environment as env } from 'src/environments/environment.default';
 
 @Component({
   selector: 'app-navbar',
@@ -16,6 +17,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
+  /** App version */
+  appVersion = env.appVersion;
+
   /** Constructor */
   constructor() {}
 }
