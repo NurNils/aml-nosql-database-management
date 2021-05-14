@@ -1,6 +1,7 @@
 export const environment = {
   appName: 'AML NoSQL Database Management',
   appDomain: 'lmf.software',
+  appVersion: 'v1.0.0',
   email: 'team@lmf.software',
   company: 'Team 5',
   github: 'https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management',

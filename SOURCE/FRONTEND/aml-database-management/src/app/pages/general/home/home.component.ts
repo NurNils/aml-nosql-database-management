@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
   }
 
   /**
-   * Initilizes data with a GET request to the REST API
+   * Initializes data with a GET request to the REST API
    * @returns {undefined}
    */
   async initData() {

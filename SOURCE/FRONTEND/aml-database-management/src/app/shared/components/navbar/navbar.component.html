@@ -7,12 +7,14 @@
         alt="AML NoSQL Database Manangement Logo"
         width="45px"
       />
-      <span>{{ 'app' | translate }}</span>
+      <span
+        >{{ 'app' | translate }} <small>({{ appVersion }})</small></span
+      >
     </a>
     <span class="spacer"></span>
     <!-- Language Wrapper -->
     <app-language-wrapper></app-language-wrapper>
-    <!-- Github -->
+    <!-- Info -->
     <a [routerLink]="['/info']" class="link">
       <button mat-icon-button class="example-icon favorite-icon">
         <mat-icon>info</mat-icon>

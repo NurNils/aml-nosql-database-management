@@ -11,6 +11,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { AboutUsComponent } from './pages/general/about-us/about-us.component';
 
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -59,6 +60,7 @@ import { UploadFileDialogComponent } from './shared/dialogs/upload-file-dialog/u
     }),
     ReactiveFormsModule,
     MatButtonModule,
+    MatCardModule,
     MatDialogModule,
     MatFormFieldModule,
     MatIconModule,

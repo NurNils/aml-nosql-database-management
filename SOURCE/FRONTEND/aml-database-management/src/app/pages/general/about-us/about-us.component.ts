@@ -9,6 +9,7 @@
  * Last modified  : 14.05.2021
  */
 import { Component } from '@angular/core';
+import { environment as env } from 'src/environments/environment.default';
 
 @Component({
   selector: 'app-about-us',
@@ -16,6 +17,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-us.component.scss'],
 })
 export class AboutUsComponent {
+  /** Github */
+  github = env.github;
+
   /** Constructor */
   constructor() {}
 }
