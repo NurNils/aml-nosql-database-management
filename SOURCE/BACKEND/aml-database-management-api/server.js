@@ -1,3 +1,13 @@
+/**
+ * Copyright (c) 2021
+ *
+ * This file is the main part of our REST API. It contains all Endpoints, the database connection and the conversion from a .aml file to .json.
+ *
+ * @author NurNils <inf19161@lehre.dhbw-stuttgart.de>
+ * @author NamidM <inf19054@lehre.dhbw-stuttgart.de>
+ *
+ * Last modified  : 14.05.2021
+ */
 const mongoose = require('mongoose');
 const cors = require('cors');
 const express = require('express');

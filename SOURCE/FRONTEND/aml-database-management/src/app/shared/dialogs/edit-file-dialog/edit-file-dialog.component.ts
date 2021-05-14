@@ -1,3 +1,13 @@
+/**
+ * Copyright (c) 2021
+ *
+ * This dialog shows the edit file dialog.
+ *
+ * @author NurNils <inf19161@lehre.dhbw-stuttgart.de>
+ * @author NamidM <inf19054@lehre.dhbw-stuttgart.de>
+ *
+ * Last modified  : 14.05.2021
+ */
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';

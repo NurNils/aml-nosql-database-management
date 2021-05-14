@@ -1,3 +1,13 @@
+/**
+ * Copyright (c) 2021
+ *
+ * This component is for the home page.
+ *
+ * @author NurNils <inf19161@lehre.dhbw-stuttgart.de>
+ * @author NamidM <inf19054@lehre.dhbw-stuttgart.de>
+ *
+ * Last modified  : 14.05.2021
+ */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';

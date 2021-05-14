@@ -1,3 +1,13 @@
+/**
+ * Copyright (c) 2021
+ *
+ * This file contains the api service which provides the application with an API endpoint connection.
+ *
+ * @author NurNils <inf19161@lehre.dhbw-stuttgart.de>
+ * @author NamidM <inf19054@lehre.dhbw-stuttgart.de>
+ *
+ * Last modified  : 14.05.2021
+ */
 import { Injectable } from '@angular/core';
 import { environment as env } from 'src/environments/environment';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';

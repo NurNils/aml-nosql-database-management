@@ -1,3 +1,13 @@
+/**
+ * Copyright (c) 2021
+ *
+ * This file descripes the mongo mondel for the files.
+ *
+ * @author NurNils <inf19161@lehre.dhbw-stuttgart.de>
+ * @author NamidM <inf19054@lehre.dhbw-stuttgart.de>
+ *
+ * Last modified  : 14.05.2021
+ */
 var mongoose = require('mongoose');
 
 /** File Schema */
