@@ -1,12 +1,14 @@
 <p>
   <mat-toolbar color="primary" id="navbar">
-    <img
-      id="logo"
-      src="assets/images/logo.jpg"
-      alt="AML NoSQL Database Manangement Logo"
-      width="45px"
-    />
-    <span>{{ 'app' | translate }}</span>
+    <a [routerLink]="['/']" class="home-link">
+      <img
+        id="logo"
+        src="assets/images/logo.jpg"
+        alt="AML NoSQL Database Manangement Logo"
+        width="45px"
+      />
+      <span>{{ 'app' | translate }}</span>
+    </a>
     <span class="spacer"></span>
     <!-- Language Wrapper -->
     <app-language-wrapper></app-language-wrapper>
