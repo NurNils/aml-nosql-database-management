@@ -30,7 +30,10 @@ export class UploadFileDialogComponent implements OnInit {
     private snackBarService: SnackBarService
   ) {}
 
-  /** Initialize Upload form */
+  /**
+   * Initializes the uploadFileFormGroup
+   * @returns {undefined}
+   */
   ngOnInit() {
     this.uploadFileFormGroup = this.formBuilder.group({
       base64: [null, Validators.required],
@@ -40,12 +43,11 @@ export class UploadFileDialogComponent implements OnInit {
     });
   }
 
-  /** Close dialog on no click */
-  onNoClick() {
-    this.dialogRef.close();
-  }
-
-  /** Handle file change */
+  /**
+   * Handles the file change and reads its content after loading
+   * @param event any
+   * @returns {undefined}
+   */
   handleFileChange(event: any) {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
@@ -61,7 +63,10 @@ export class UploadFileDialogComponent implements OnInit {
     }
   }
 
-  /** Upload file */
+  /**
+   * Uploads all file data as a file to the REST API
+   * @returns {undefined}
+   */
   async uploadFile() {
     if (this.uploadFileFormGroup.valid) {
       const file = {

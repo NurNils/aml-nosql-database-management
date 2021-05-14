@@ -42,7 +42,10 @@ export class EditFileDialogComponent implements OnInit {
     private snackBarService: SnackBarService
   ) {}
 
-  /** Initialize Edit form */
+  /**
+   * Initializes the editFileFormGroup
+   * @returns {undefined}
+   */
   async ngOnInit() {
     if (this.data?.id) {
       /** Load existing data */
@@ -67,12 +70,10 @@ export class EditFileDialogComponent implements OnInit {
     }
   }
 
-  /** Close dialog on no click */
-  onNoClick() {
-    this.dialogRef.close();
-  }
-
-  /** Edit file */
+  /**
+   * Edits or upload the file in the editFileFormGroup, depends on the given data
+   * @returns {undefined}
+   */
   async editFile() {
     if (this.editFileFormGroup.valid) {
       const file = {

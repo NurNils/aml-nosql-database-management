@@ -51,14 +51,20 @@ export class HomeComponent implements OnInit {
     this.initData();
   }
 
-  /** Initialize */
+  /**
+   * Initializes the filterFormGroup
+   * @returns {undefined}
+   */
   ngOnInit() {
     this.filterFormGroup = this.formBuilder.group({
       filter: [null, [Validators.max(1000)]],
     });
   }
 
-  /** Initialize data */
+  /**
+   * Initilizes data with a GET request to the REST API
+   * @returns {undefined}
+   */
   async initData() {
     const res = await this.apiService.get('file');
     if (res.status === IResponseStatus.success) {
@@ -68,7 +74,11 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  /** Apply filter to datasource */
+  /**
+   * Applies filter to the dataSource
+   * @param event Event
+   * @returns {undefined}
+   */
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -78,7 +88,10 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  /** Clear filter */
+  /**
+   * Clears the filter and resets the paginator of the dataSource
+   * @returns {undefined}
+   */
   clearFilter() {
     this.filterFormGroup.patchValue({ filter: null });
     this.dataSource.filter = '';
@@ -87,7 +100,10 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  /** Upload file */
+  /**
+   * Opens a MatDialog to upload an existing file
+   * @returns {undefined}
+   */
   async uploadFile() {
     const dialogRef = this.dialog.open(UploadFileDialogComponent, {
       width: '500px',
@@ -101,7 +117,10 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  /** Create file */
+  /**
+   * Opens a MatDialog to create a new file
+   * @returns {undefined}
+   */
   async createFile() {
     const dialogRef = this.dialog.open(EditFileDialogComponent, {
       width: '90vw',
@@ -115,7 +134,11 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  /** Edit file */
+  /**
+   * Opens a MatDialog to edit a file by _id
+   * @param id _id of the file
+   * @returns {undefined}
+   */
   editFile(id: string) {
     const dialogRef = this.dialog.open(EditFileDialogComponent, {
       width: '90vw',
@@ -135,7 +158,11 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  /** Delete file */
+  /**
+   * Deletes a file by _id with a DELETE request to the REST API
+   * @param id _id of the file
+   * @returns {undefined}
+   */
   async deleteFile(id: string) {
     if (confirm(this.translateService.instant('file-delete-confirm'))) {
       const res = await this.apiService.delete(`file/${id}`);
@@ -146,7 +173,11 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  /* Download file */
+  /**
+   * Downloads a file by _id with a GET request to the REST API
+   * @param id _id of the file
+   * @returns {undefined}
+   */
   async downloadFile(id: string) {
     const res = await this.apiService.get(`file/${id}/download`);
     if (res.status === IResponseStatus.success) {
