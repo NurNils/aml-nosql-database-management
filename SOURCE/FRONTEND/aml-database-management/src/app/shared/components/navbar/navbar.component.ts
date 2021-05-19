@@ -9,6 +9,10 @@
  * Last modified  : 14.05.2021
  */
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { IResponseStatus } from 'src/app/interfaces/response.interface';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { SnackBarService } from 'src/app/services/snack-bar/snack-bar.service';
 import { environment as env } from 'src/environments/environment.default';
 
 @Component({
@@ -21,5 +25,17 @@ export class NavbarComponent {
   appVersion = env.appVersion;
 
   /** Constructor */
-  constructor() {}
+  constructor(private router: Router, public authService: AuthService, private snackBarService: SnackBarService) {}
+
+  /** Logout */
+  async logout() {
+    const res = await this.authService.logout();
+    if(res.status === IResponseStatus.success) {
+      this.authService.usernameOrEmail = null;
+      this.router.navigateByUrl('/login').then();
+      this.snackBarService.openSnackbarSuccess('success.logout');
+    } else {
+      this.snackBarService.openSnackbarError('error.logout');
+    }
+  }
 }

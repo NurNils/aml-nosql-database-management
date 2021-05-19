@@ -23,7 +23,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { translateLoaderFactory } from './shared/utils/translate-loader/translate-loader.util';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
@@ -34,6 +34,9 @@ import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 
 import { EditFileDialogComponent } from './shared/dialogs/edit-file-dialog/edit-file-dialog.component';
 import { UploadFileDialogComponent } from './shared/dialogs/upload-file-dialog/upload-file-dialog.component';
+import { AuthInterceptor } from './interceptors/auth/auth.interceptor';
+import { LoginComponent } from './pages/general/login/login.component';
+import { CardWrapperComponent } from './shared/components/card-wrapper/card-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,8 @@ import { UploadFileDialogComponent } from './shared/dialogs/upload-file-dialog/u
     InfoComponent,
     EditFileDialogComponent,
     UploadFileDialogComponent,
+    LoginComponent,
+    CardWrapperComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -54,11 +59,11 @@ import { UploadFileDialogComponent } from './shared/dialogs/upload-file-dialog/u
     BrowserAnimationsModule,
     CodemirrorModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: { provide: TranslateLoader, deps: [HttpClient], useFactory: translateLoaderFactory },
     }),
-    ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
@@ -74,17 +79,9 @@ import { UploadFileDialogComponent } from './shared/dialogs/upload-file-dialog/u
     MatSnackBarModule,
     MatSortModule,
   ],
-  exports: [
-    MatButtonModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatToolbarModule,
-    MatSortModule,
+  providers: [    
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -16,6 +16,9 @@ const handlebars = require('handlebars');
 const request = require('request');
 const fs = require('fs');
 
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+
 const app = express();
 
 const dotenv = require('dotenv');
@@ -33,6 +36,7 @@ const FILE = require('./models/file');
 app.use(bodyParser.json({ limit: '12mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '12mb', extended: true }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 /** Origins */
 app.use((req, res, next) => {
@@ -46,11 +50,72 @@ app.use((req, res, next) => {
 });
 
 /**********************
+ * Authentication
+ **********************/
+
+/** Authenticate user */
+authenticate = (req, res, next) => {
+  if (req.cookies.authToken) {
+    jwt.verify(req.cookies.authToken, process.env.JWT_SECRET, (err, decoded) => {
+      if (err) {
+        res.status(403).json({ status: 'error', message: 'Failed to authenticate token' });
+      } else {
+        next();
+      }
+    });
+  } else {
+    res.status(403).json({ status: 'error', message: 'No authToken were provided' });
+  }
+};
+
+/**********************
  * Routes
  **********************/
 
 /** Routes */
-app.get('/file', (req, res) => {
+app.post('/login', (req, res) => {
+  const data = req.body;
+  if (data && data.usernameOrEmail && data.password) {
+    const usernameOrEmail = data.usernameOrEmail;
+    const password = data.password;
+    if(usernameOrEmail == process.env.APP_USER_NAME && password == process.env.APP_USER_PASSWORD) {
+      const authToken = jwt.sign({ usernameOrEmail }, process.env.JWT_SECRET, {
+        expiresIn: '86400000', // expires in 24 hours
+      });      
+      res.cookie('authToken', authToken, {
+        maxAge: 86400000,
+        httpOnly: true,
+        secure: production,
+      });
+      res.status(200).send({ status: 'success', data: { usernameOrEmail } });
+    } else {
+      res.status(200).send({ status: 'error', message: 'Password or username is incorrect' });
+    }
+  } else {
+    res.status(200).send({ status: 'error', message: 'Please provide username and password' });
+  }
+});
+
+app.get(`/logout`, (req, res) => {
+  res.clearCookie(`authToken`);
+  res.status(200).send({ status: 'success', message: 'Logout successful' });
+});
+
+app.get(`/authenticate`, (req, res) => {
+  if (req.cookies.authToken) {
+    jwt.verify(req.cookies.authToken, process.env.JWT_SECRET, (err, decoded) => {
+      if (err) {
+        res.status(400).json({ status: 'error', message: 'Failed to authenticate token' });
+      } else {
+        res.status(200).send({ status: 'success', data: { usernameOrEmail: decoded.usernameOrEmail } });
+      }
+    });
+  } else {
+    res.status(400).json({ status: 'error', message: 'No authToken were provided' });
+  }
+});
+
+app.get('/file', authenticate, (req, res) => {
   FILE.getFiles((err, files) => {
     if (!err && files) {
       let dataSource = [];
@@ -64,7 +129,7 @@ app.get('/file', (req, res) => {
   });
 });
 
-app.post('/file', (req, res) => {
+app.post('/file', authenticate, (req, res) => {
   const file = req.body.file;
 
   if (file && file.base64 && file.name && file.size) {
@@ -105,7 +170,7 @@ app.post('/file', (req, res) => {
   }
 });
 
-app.get('/file/:id', (req, res) => {
+app.get('/file/:id', authenticate, (req, res) => {
   FILE.getFile(req.params.id, (err, file) => {
     if (!err && file) {
       let newObj = {
@@ -119,7 +184,7 @@ app.get('/file/:id', (req, res) => {
   });
 });
 
-app.get(`/file/:id/download`, (req, res) => {
+app.get(`/file/:id/download`, authenticate, (req, res) => {
   FILE.getFile(req.params.id, (err, file) => {
     if (!err && file) {
       res.status(200).send({ status: 'success', data: file });
@@ -129,7 +194,7 @@ app.get(`/file/:id/download`, (req, res) => {
   });
 });
 
-app.put('/file/:id', (req, res) => {
+app.put('/file/:id', authenticate, (req, res) => {
   let file = req.body.file;
   file.base64 = new Buffer.from(file.content).toString('base64');
   delete file.content;
@@ -144,7 +209,7 @@ app.put('/file/:id', (req, res) => {
   });
 });
 
-app.delete('/file/:id', (req, res) => {
+app.delete('/file/:id', authenticate, (req, res) => {
   FILE.deleteFile(req.params.id, (err, file) => {
     if (!err && file) {
       res.status(200).send({ status: 'success', data: file });

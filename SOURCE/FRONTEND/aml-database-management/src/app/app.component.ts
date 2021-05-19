@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ApiService } from './services/api/api.service';
+import { Router } from '@angular/router';
+import { IResponseStatus } from './interfaces/response.interface';
+import { AuthService } from './services/auth/auth.service';
 import { LanguageService } from './services/language/language.service';
 
 @Component({
@@ -8,18 +10,20 @@ import { LanguageService } from './services/language/language.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  /** Only for testing -> Check if user is logged in */
-  public login: boolean = false;
-
   /** Constructor */
-  constructor(languageService: LanguageService, private apiService: ApiService) {
+  constructor(private router: Router, languageService: LanguageService, private authService: AuthService) {
     languageService.initializeI18n();
-
-    this.authorize();
+    this.authenticate();
   }
 
-  /** Authorize user */
-  async authorize() {
-    const res = await this.apiService.login();
+  /** Authenticate user */
+  async authenticate() {
+    const res = await this.authService.authenticate();
+    if(res.status === IResponseStatus.success && res.data?.usernameOrEmail) {
+      this.authService.usernameOrEmail = res.data.usernameOrEmail;
+      if(this.router.isActive('/login', true)) {
+        this.router.navigateByUrl('/').then();
+      }
+    }
   }
 }

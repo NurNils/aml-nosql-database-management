@@ -14,6 +14,7 @@ import { GeneralComponent } from './pages/general/general.component';
 import { HomeComponent } from './pages/general/home/home.component';
 import { AboutUsComponent } from './pages/general/about-us/about-us.component';
 import { InfoComponent } from './pages/info/info.component';
+import { LoginComponent } from './pages/general/login/login.component';
 
 const routes: Routes = [
   /** General */
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'info', component: InfoComponent },
+      { path: 'login', component: LoginComponent },
     ],
   },
   {
