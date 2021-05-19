@@ -64,7 +64,7 @@ authenticate = (req, res, next) => {
       }
     });
   } else {
-    res.status(403).json({ status: 'error', message: 'No authToken were provided' });
+    res.status(403).json({ status: 'error', message: 'No authToken was provided' });
   }
 };
 
@@ -111,7 +111,7 @@ app.get(`/authenticate`, (req, res) => {
       }
     });
   } else {
-    res.status(400).json({ status: 'error', message: 'No authToken were provided' });
+    res.status(400).json({ status: 'error', message: 'No authToken was provided' });
   }
 });
 
