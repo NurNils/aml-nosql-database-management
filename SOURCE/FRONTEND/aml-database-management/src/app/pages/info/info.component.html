@@ -1,270 +1,7 @@
 <ng-container *ngIf="translate.currentLang != 'de'">
-  <div class="title">
-    <h1>Help and info page</h1>
-    <h2>Come here if you have any problems according the propper usage of the AML NoSQL-Database</h2>
-  </div>
-  <mat-card class="content-container">
-    <a id="user-content-2-introduction" class="anchor" href="#2-introduction" aria-hidden="true"
-      ><svg
-        class="octicon octicon-link"
-        viewBox="0 0 16 16"
-        version="1.1"
-        width="16"
-        height="16"
-        aria-hidden="true"
-      >
-        <path fill-rule="evenodd"></path></svg
-    ></a>
-    <br>
-    The AML-NoSQL-Database-Management is used to upload AML files onto a NoSQL-Database to provide a
-    unified and central solution to manage AML files.
-  <br>AML is a file format developed as an exchange format with an open standard.
-  <br>From the user's point of view, the GUI should have the following functionalities:
-  <ol>
-    <li>Upload AML files from the user's computer.</li>
-    <li>Download files to the computer that have been uploaded.</li>
-    <li>Edit saved files with a dialog window and upload the changed version.</li>
-    <li>Delete saved files from a list of files.</li>
-    <li>Search for existing AML files with the file name.</li>
-    </ol>
-    <h1>Profile</h1>
-    <h2>Login</h2>
-      When you start the page you can see a login. Here you can type a username and a password and press the 'Login' button to login. The typed username has to has between 3 and 100 letters.
-      <br>
-      <br>
-        <img id="image" src="https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/blob/master/SOURCE/FRONTEND/aml-database-management/src/assets/images/manual/login.png" alt="navbar" />
-        <br>
-      <br>
-      <br>
-      <h2>Logout</h2>
-    After you have finished your work at the AML-NoSQL-Database you may want to logout. 
-    Therefore you have to click the
-        <img id="image" src="https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/blob/master/SOURCE/FRONTEND/aml-database-management/src/assets/images/manual/profile.png" alt="navbar" /> button.
-      <br>
-      <br>
-    You will then be able to see a little popup which shows you which userprofile you are using.
-    <br>
-        <img id="image" src="https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/blob/master/SOURCE/FRONTEND/aml-database-management/src/assets/images/manual/logout.png" alt="navbar" />
-      <br>
-      Also it shows you a 'Logout' Button. Press this button to logout.
-    <br>
-    <br>
-    <h1>Navigation Bar</h1>
-    At the top of the website you can see an orange so called navigation bar or short navbar. The navbar will always appear on on top of the website to allow easy navigation to all sections.
-    <br>
-    <br>
-      <img id="image" src="/assets/images/manual/neulogo.png" alt="navbar" />
-      <br>
-      <br>
-      Starting in the upper left corner, you can see our logo and the name of the software. No
-      functionalities can be found here.
-      <br>
-      <br>
-      <img id="image" src="assets/images/manual/logo.png" alt="logo" />
-      <br>
-      <br>
-      <br>
-      <br>
-      <h2>Changing language</h2>
-      In the upper right corner you can find several symbols.
-      <br><br>
-      <img id="image" src="assets/images/manual/navmenu.png" alt="navmenu">
-      <br><br>
-      Starting from left you can see a flag
-      which shows eithe an American or a German flag. You can use this button to select your language.
-      <br><br>
-      <img id="image" class="specialimage" src="assets/images/manual/changelanguage.png" alt="changelanguage" />
-      <br><br>
-      <br><br>      
-      <h2>Info page</h2>
-      Moving one symbol to the right you can see this symbol: <img width="30px" id="image" src="assets/images/manual/info.png" alt="info" />
-      <br>
-      You can press this button to navigate to the info page. The page where you will find yourself
-      will conatin the same explanation text as the user manual you are reading right now.
-      <br>
-      <br>
-      <h2>Home</h2>
-      The next item is a <img height="30px" id="image" src="assets/images/manual/home.png" alt="home" /> button. You can press this button to return to the main page of our
-      software which is also the producctive side.
-      <br>
-      <br>
-      <br><br><h2>About us</h2>
-      The last element in the upper right corner is the  <img height="30px" id="image" src="assets/images/manual/aboutus.png" alt="aboutus" /> section.
-      <br>
-      Clickig there will move
-      you to a sub page where you can learn a little bit more about the team behind the AML NoSQL
-      Database Management.
-      You can find pictures of our team members as well as their positions. Also you can find contact
-      information. Feel free to write us an e-mail if you have any question or want to give us
-      feedback.
-      <br><br><br>
-      <h1>Main page</h1>
-      Let's move to the most important part of the website: the main site.
-      <br><br>
-      <img id="image" src="assets/images/manual/neumainpage.png" alt="mainpage" />
-      <br><br>
-      Here you can find the heart of our software: the AML NoSQL Database. Starting on the upper right
-      side you can find two buttons:
-      <br><br>
-      <img id="image" src="assets/images/manual/uploadcreate.png" alt="uploadcreate" />
-      <br><br>
-      Both are used to get add new AML files into the AML NoSQL-Database.
-      <br><br><h2>Uploading a file</h2>
-      The left button which sais <img id="image" src="assets/images/manual/upload.png" alt="upload" /> is used to upload .aml files from your computer.
-      <br>
-      
-      <br>
-      If you click this button you should see a little popup which sais 'Upload file.
-      Here you can upload your AML file.'.
-      <br><br>
-      <img id="image" src="assets/images/manual/uploadaltert.png" alt="uploadalert" />
-      <br><br>
-      Under this texts on the left you can see a little button
-      with 'Choose File'. Right next to the button on the right side is an info text to show your
-      upload status. By default it sais 'No file chosen'. In the bottom right corner you will see two
-      buttons. The left one sais 'Cancel' and can be used to abort the upload process. The right one
-      which is greyed and blocked by default sais 'Upload'. To make use of the upload button, you have
-      to press the 'Choose File' button first. Pressing it will open your local file system. You can
-      now search your local file system for files you want to upload. Just select them and press
-      confirm. How exactly your file system as well as the confirmation process looks depoends
-      on your used Operation-System. 
-      After you have selected a file you will see that your selected file is shown at the spot, where
-      'No file chosen' stood before.
-      <br><br>
-      <img id="image" src="assets/images/manual/uploadselected.png" alt="uploadselected" />
-      <br><br>
-      Use this to make sure you have chosen the right file. If you are certain that you selected everything
-      correctly, you can finally press the 'Uplaod' button. You will be redirected to the main page
-      and the selected file will be uploaded. Make sure you see a little altert box at the bottom of the site
-      which sais 'File was uploaded succesfully'.
-      <br><br>
-      <img id="image" src="assets/images/manual/neuuploadsucces.png" alt="uploadsucces" />
-      <br><br>
-      Note that it is not possible to upload files which have the same name like an already existing
-      one.
-      <br>
-      <br><br><h2>Creating a file</h2>
-      Alternatively you can also choose to make use of the <img id="image" src="assets/images/manual/createfilebutton.png" alt="createfilebutton" />
-      button.
-      <br>
-      <br>
-      As the name sais, it is used to create .aml files directly in the AML-NoSQL Database. Clicking
-      it will also show you an alert box which looks very similar to the one where you can upload.
-      <br><br>
-      <img id="image" src="assets/images/manual/neucreatefile.png" alt="createfile" />
-      <br><br>
-      Like in the upload process there are 'Cancel' and 'Upload' buttons with the same functionallities as in the upload process.
-      This time you have an input line which sais 'Name'. Use this to declare a name but keep in mind to choose a unique name because
-      otherwise you will get an error. As you can see on the
-      right side of the inputline, you dont have to to write .aml as file type. The software does this
-      automatically for you. The big Textfield down under is used to write code for your .aml file. It
-      even supports syntax highlighting. When you are done writing you can confirm by clicking the
-      'Upload' button.
-      <br><br>
-      <img id="image" src="assets/images/manual/neucreatecode.png" alt="createfilecode" />
-      <br><br>
-      You will be redirected to the main page and your file will appear at the table. Again make sure that you see the 
-      little alert box that tells you that the creation was succesfull.
-      <br><br>
-      <img id="image" src="assets/images/manual/neucreatesuccess.png" alt="createdfilesuccessfully" />
-      <br>
-      <br><br><h2>Finding a file</h2>
-      When you have uploaded several files to the database, finding specific items can get difficult.
-      To help you finding the files you are searching for, AML-NoSQL provides a searchbar on the left
-      top of the Database to specify filterwords.
-      <br><br>
-      <img id="image" src="assets/images/manual/filterbox.png" alt="filterbox" />
-      <br><br>
-      You can type all kinds of keywords for example numbers to search for the date, ID or size or
-      type characters to search for the name of the file. A combination of numbers and characters is
-      possible as well.
-      <br><br>
-      <img id="image" src="assets/images/manual/neufilterdemo.png" alt="searchdemonstrate" />
-      <br><br>
-      Therefore you will be able to filter out files with attributes you don't want.
-      <br><br><br>
-      <h1>Using the Table</h1>
-      The table is the heart of the main page. All uploaded .aml files will appear here.
-      <br><br>
-      <img id="image" src="assets/images/manual/neutable.png" alt="table" />
-      <br>
-      <br><br><h2>Sorting files</h2>
-      In order to find them easier you can sort the table. Therefore you shall use the sort bar.
-      <br><br>
-      <img id="image" src="assets/images/manual/sortbar.png" alt="sortbar" />
-      <br><br>
-      To do this, just press one of the categories at the table header. You can filter ascending or
-      descending by either 'ID', which is an identifier given by the software to identify uploaded
-      files, Name, which is the name you have chosen for your file, 'Size', which is the size of your
-      created file and 'Date', which is the date of creation (not upload!) of your file. To switch
-      between ascending and descending just click the attribute of choise once again.
-      <br><br>
-      <img id="image" src="assets/images/manual/idascending.png" alt="idascending" /> <br>
-      <img id="image" src="assets/images/manual/iddescending.png" alt="iddescending" />
-      <br><br>
-      By clicking it a third time you can stop sorting.
-      <br>
-      <br><br><h2>Edit, download or delete a file</h2>
-      The item on the right side of the table header sais 'Actions'.
-      <br><br>
-      <img id="image" src="assets/images/manual/actions.png" alt="actions" />
-      <br><br>
-      Here you can delete, download or edit files. To edit a file you must click the <img id="image" src="assets/images/manual/editfile.png" alt="editfile" /> symbol.
-      <br>
-      You will then be redirected to a alertbox which looks like the 'Create file' one. You can now
-      change the name and edit the code of the file. Of course you can 'Cancel' the operation if you
-      dont want to do any changes. If you are done editing just press 'Upload'.
-      <br>
-      <br>
-      To download files you can use this <img id="image" src="assets/images/manual/downloadfile.png" alt="downloadfile" /> button.
-      <br>
-      The download will start automatically.
-      <br>
-      <br>
-      The
-      last option is to delete files. To delete a file press the <img id="image" src="assets/images/manual/deletefile.png" alt="deletefile" /> button.
-      <br>
-      To make sure you do not delete a file on accident, you will get a second instance confirmation
-      before the file is deleted.
-      <br><br>
-      <img id="image" src="assets/images/manual/suredelete.png" alt="suredelete" />
-      <br><br>
-      You will have to press 'OK' to confirm the deletion process.
-      <br>
-      <br><br><h2>Paging</h2>
-      At the bottom right corner you can see the paging operations.
-      <br><br>
-      <img id="image" src="assets/images/manual/neumanyfiles.png" alt="manyfiles" />
-      <br><br>
-      For reasons of user experience and performance only 10 items are shown per page.
-      <br><br>
-      <img id="image" src="assets/images/manual/defaultitemsperpage.png" alt="defaultitemsperpage" />
-      <br><br>
-      Anyways you can set this number up tp 200. Just click on the number right next to 'Items per
-      page' ans select your number of choice.
-      <br><br>
-      <img id="image" src="assets/images/manual/filespersite.png" alt="filespersite" />
-      <br><br>
-      On the right side of this selection you can see the amount of items which are shown per page.
-      Last but not least in the right corner you can see two arrows.
-      <br><br>
-      <img id="image" src="assets/images/manual/pagearrow.png" alt="pagearrow" />
-      <br><br>
-      You can use them to navigate between multiple table pages so you dont have to show too many
-      items per page.
-      <br>
-      <br><br>
-      <h2>
-        Could this help you? If you still have any questions feel free to contact us. Click
-         <a href="http://localhost:4200/about-us">here</a> to find our contact information.
-      </h2>
-    </mat-card>  
-  </ng-container>
-
-<ng-container *ngIf="translate.currentLang == 'de'">
     <div class="title">
-      <h1>Hilfe- und Infoseite</h1>
-      <h2>Kommen Sie hierher, wenn Sie Probleme mit der korrekten Nutzung der AML NoSQL-Datenbank haben</h2>
+      <h1>Help and info page</h1>
+      <h2>Come here if you have any problems according the propper usage of the AML NoSQL-Database</h2>
     </div>
     <mat-card class="content-container">
       <a id="user-content-2-introduction" class="anchor" href="#2-introduction" aria-hidden="true"
@@ -279,48 +16,49 @@
           <path fill-rule="evenodd"></path></svg
       ></a>
       <br>
-      Das AML-NoSQL-Datenbank-Management wird verwendet, um AML-Dateien in eine NoSQL-Datenbank zu laden, um eine
-      einheitliche und zentrale Lösung zur Verwaltung von AML-Dateien bereitzustellen.
-    <br>AML ist ein als Austauschformat entwickeltes Dateiformat mit einem offenen Standard.
-    <br>Aus Sicht des Benutzers bietet die GUI folgende Funktionalitäten:
+      The AML-NoSQL-Database-Management is used to upload AML files onto a NoSQL-Database to provide a
+      unified and central solution to manage AML files.
+    <br>AML is a file format developed as an exchange format with an open standard.
+    <br>From the user's point of view, the GUI should have the following functionalities:
     <ol>
-      <li>Hochladen von AML-Dateien vom Computer des Benutzers.</li>
-      <li>Herunterladen von Dateien auf den Computer, die zuvor hochgeladen wurden.</li>
-      <li>Hochgeladene Dateien in einem Dialogfenster bearbeiten aktualisieren.</li>
-      <li>Hochgeladene Dateien bei Bedarf löschen.</li>
-      <li>Mit Suchfeld AML-Datenbank durchsuchen</li>
+      <li>Upload AML files from the user's computer.</li>
+      <li>Download files to the computer that have been uploaded.</li>
+      <li>Edit saved files with a dialog window and upload the changed version.</li>
+      <li>Delete saved files from a list of files.</li>
+      <li>Search for existing AML files with the file name.</li>
       </ol>
-      <h1>Profil</h1>
-    <h2>Anmeldung</h2>
-      Wenn Sie die Seite starten, sehen Sie ein Login. Hier können Sie einen Benutzernamen und ein Passwort eingeben und die Schaltfläche "Login" drücken, um sich anzumelden. Der eingegebene Benutzername muss aus 3 bis 100 Buchstaben bestehen.
-      <br>
-      <br>
-        <img id="image" src="https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/blob/master/SOURCE/FRONTEND/aml-database-management/src/assets/images/manual/login.png" alt="navbar" />
+      <h1>Profile</h1>
+      <h2>Login</h2>
+      When you start the page you can see a login. Here you can type a username and a password and press the 'Login' button to login. The typed username has to has between 3 and 100 letters. 
+      If you are at the info or about us page, you can get back to the login page by clicking on the 'Login' button: 
         <br>
+        <br>
+          <img id="image" src="https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/blob/master/SOURCE/FRONTEND/aml-database-management/src/assets/images/manual/login.png" alt="navbar" />
+          <br>
+        <br>
+        <br>
+        <h2>Logout</h2>
+      After you have finished your work at the AML-NoSQL-Database you may want to logout. 
+      Therefore you have to click the
+          <img id="image" src="https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/blob/master/SOURCE/FRONTEND/aml-database-management/src/assets/images/manual/profile.png" alt="navbar" /> button.
+        <br>
+        <br>
+      You will then be able to see a little popup which shows you which userprofile you are using.
+      <br>
+          <img id="image" src="https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/blob/master/SOURCE/FRONTEND/aml-database-management/src/assets/images/manual/logout.png" alt="navbar" />
+        <br>
+        Also it shows you a 'Logout' Button. Press this button to logout.
       <br>
       <br>
-      <h2>Abmelden</h2>
-    Nachdem Sie Ihre Arbeit an der AML-NoSQL-Datenbank beendet haben, möchten Sie sich eventuell abmelden. 
-    Dazu müssen Sie auf das
-        <img id="image" src="https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/blob/master/SOURCE/FRONTEND/aml-database-management/src/assets/images/manual/profile.png" alt="navbar" /> Symbol klicken.
-      <br>
-      <br>
-    Es öffnet sich ein kleines Popup, das Ihnen anzeigt, welches Benutzerprofil Sie verwenden.
-    <br>
-        <img id="image" src="https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/blob/master/SOURCE/FRONTEND/aml-database-management/src/assets/images/manual/logout.png" alt="navbar" />
-      <br>
-      Außerdem zeigt es einen 'Logout'-Button an. Drücken Sie diesen um sich abzumelden.
-
-Übersetzt mit www.DeepL.com/Translator (kostenlose Version)
-      <h1>Navigationsleiste</h1>
-      Am oberen Rand der Website sehen Sie eine orangefarbene, sogenannte Navigationsleiste oder kurz Navbar. Die Navigationsleiste wird immer oben auf der Website angezeigt, um eine einfache Navigation zu allen Bereichen zu ermöglichen.
+      <h1>Navigation Bar</h1>
+      At the top of the website you can see an orange so called navigation bar or short navbar. The navbar will always appear on on top of the website to allow easy navigation to all sections.
       <br>
       <br>
         <img id="image" src="/assets/images/manual/neulogo.png" alt="navbar" />
         <br>
         <br>
-        In der oberen linken Ecke sehen Sie unser Logo und den Namen der Software. Keine
-        Funktionalitäten sind hier zu finden.
+        Starting in the upper left corner, you can see our logo and the name of the software. No
+        functionalities can be found here.
         <br>
         <br>
         <img id="image" src="assets/images/manual/logo.png" alt="logo" />
@@ -328,197 +66,461 @@
         <br>
         <br>
         <br>
-        <h2>Sprache wechseln</h2>
-        In der oberen rechten Ecke finden Sie verschiedene Symbole.
+        <h2>Changing language</h2>
+        In the upper right corner you can find several symbols.
         <br><br>
         <img id="image" src="assets/images/manual/navmenu.png" alt="navmenu">
         <br><br>
-        Beginnend von links sehen Sie ein Icon,
-        das entweder eine amerikanische oder eine deutsche Flagge zeigt. Über diese Schaltfläche können Sie Ihre Sprache auswählen.
+        Starting from left you can see a flag
+        which shows eithe an American or a German flag. You can use this button to select your language.
         <br><br>
         <img id="image" class="specialimage" src="assets/images/manual/changelanguage.png" alt="changelanguage" />
         <br><br>
         <br><br>      
-        <h2>Infoseite</h2>
-        Wenn Sie ein Symbol weiter nach rechts wandern, sehen Sie dieses Symbol: <img width="30px" id="image" src="assets/images/manual/info.png" alt="info" />
+        <h2>Info page</h2>
+        Moving one symbol to the right you can see this symbol: <img width="30px" id="image" src="assets/images/manual/info.png" alt="info" />
         <br>
-        Mit dieser Schaltfläche können Sie auf die Info-Seite navigieren. Die Seite, auf die Sie anschließend geleitet
-        werden, wird den gleichen Erklärungstext enthalten, wie das Benutzerhandbuch, das Sie gerade lesen.
+        You can press this button to navigate to the info page. The page where you will find yourself
+        will conatin the same explanation text as the user manual you are reading right now.
         <br>
         <br>
         <h2>Home</h2>
-        Der nächste Punkt ist eine <img height="30px" id="image" src="assets/images/manual/home.png" alt="home" /> Schaltfläche. Mit dieser Schaltfläche kommen Sie auf die Hauptseite unserer
-        Software zurück, die gleichzeitig die produktive Seite ist.
+        The next item is a <img height="30px" id="image" src="assets/images/manual/home.png" alt="home" /> button. You can press this button to return to the main page of our
+        software which is also the producctive side.
         <br>
         <br>
-        <br><br><h2>Über uns</h2>
-        Das letzte Element in der rechten oberen Ecke ist der Bereich <img height="30px" id="image" src="assets/images/manual/aboutus.png" alt="aboutus" />.
+        <br><br><h2>About us</h2>
+        The last element in the upper right corner is the  <img height="30px" id="image" src="assets/images/manual/aboutus.png" alt="aboutus" /> section.
         <br>
-        Wenn Sie dort klicken, gelangen Sie auf eine Unterseite, auf der Sie ein wenig mehr über das Team hinter der AML NoSQL
-        Datenbank-Management-Softwareverfahren können.
-        Sie finden dort Bilder unserer Teammitglieder sowie deren Positionen. Außerdem finden Sie hier Kontaktinformationen. 
-        Sie können uns gerne eine E-Mail schreiben, wenn Sie Fragen haben oder uns
-        Feedback geben wollen.
+        Clickig there will move
+        you to a sub page where you can learn a little bit more about the team behind the AML NoSQL
+        Database Management.
+        You can find pictures of our team members as well as their positions. Also you can find contact
+        information. Feel free to write us an e-mail if you have any question or want to give us
+        feedback.
         <br><br><br>
-        <h1>Hauptseite</h1>
-        Kommen wir nun zum wichtigsten Teil unserer Website: der Hauptseite.
+        <h1>Main page</h1>
+        Let's move to the most important part of the website: the main site.
         <br><br>
         <img id="image" src="assets/images/manual/neumainpage.png" alt="mainpage" />
         <br><br>
-        Hier finden Sie das Herzstück unserer Software: die AML NoSQL-Datenbank. Beginnend auf der oberen rechten
-        Seite finden Sie zwei Buttons:
+        Here you can find the heart of our software: the AML NoSQL Database. Starting on the upper right
+        side you can find two buttons:
         <br><br>
         <img id="image" src="assets/images/manual/uploadcreate.png" alt="uploadcreate" />
         <br><br>
-        Beide werden verwendet, um neue AML-Dateien in die AML NoSQL-Datenbank einzufügen.
-        <br><br><h2>Hochladen einer Datei</h2>
-        Die linke Schaltfläche, die <img id="image" src="assets/images/manual/upload.png" alt="upload" /> heißt, dient zum Hochladen von .aml-Dateien vom eigenen Rechner.
+        Both are used to get add new AML files into the AML NoSQL-Database.
+        <br><br><h2>Uploading a file</h2>
+        The left button which sais <img id="image" src="assets/images/manual/upload.png" alt="upload" /> is used to upload .aml files from your computer.
         <br>
         
         <br>
-        Wenn Sie auf diese Schaltfläche klicken, sollte ein kleines Popup-Fenster erscheinen, in dem es heißt: "Datei hochladen".
-        Hier können Sie Ihre AML-Datei hochladen.
+        If you click this button you should see a little popup which sais 'Upload file.
+        Here you can upload your AML file.'.
         <br><br>
         <img id="image" src="assets/images/manual/uploadaltert.png" alt="uploadalert" />
         <br><br>
-        Unter diesen Texten sehen Sie auf der linken Seite eine kleine Schaltfläche
-        mit 'Datei wählen'. Rechts neben der Schaltfläche befindet sich ein Infotext, der den
-        Upload-Status anzeigt. Standardmäßig steht dort "Keine Datei ausgewählt". In der unteren rechten Ecke sehen Sie zwei
-        Schaltflächen. Die linke heißt "Abbrechen" und kann verwendet werden, um den Upload-Vorgang abzubrechen. Die rechte Schaltfläche,
-        die standardmäßig ausgegraut und blockiert ist, heißt "Hochladen". Um die Schaltfläche "Hochladen" zu verwenden, müssen Sie
-        müssen Sie zuerst die Schaltfläche "Datei auswählen" drücken. Wenn Sie hierauf klicken, wird Ihr lokales Dateisystem geöffnet. Sie können
-        Sie können nun Ihr lokales Dateisystem nach Dateien durchsuchen, die Sie hochladen möchten. Wählen Sie diese einfach aus und wählen Sie
-        bestätigen. Wie genau Ihr Dateisystem sowie der Bestätigungsvorgang aussieht, hängt
-        von dem von Ihnen verwendeten Betriebssystem ab. 
-        Nachdem Sie eine Datei ausgewählt haben, sehen Sie, dass Ihre ausgewählte Datei an der Stelle angezeigt wird, an der vorher
-        'Keine Datei ausgewählt' vorher stand.
+        Under this texts on the left you can see a little button
+        with 'Choose File'. Right next to the button on the right side is an info text to show your
+        upload status. By default it sais 'No file chosen'. In the bottom right corner you will see two
+        buttons. The left one sais 'Cancel' and can be used to abort the upload process. The right one
+        which is greyed and blocked by default sais 'Upload'. To make use of the upload button, you have
+        to press the 'Choose File' button first. Pressing it will open your local file system. You can
+        now search your local file system for files you want to upload. Just select them and press
+        confirm. How exactly your file system as well as the confirmation process looks depoends
+        on your used Operation-System. 
+        After you have selected a file you will see that your selected file is shown at the spot, where
+        'No file chosen' stood before.
         <br><br>
-    <img id="image" src="assets/images/manual/uploadselected.png" alt="uploadselected" />
-    <br><br>
-    Verwenden Sie dies, um sicherzustellen, dass Sie die richtige Datei ausgewählt haben. Wenn Sie sicher sind, dass Sie alles richtig ausgewählt haben, 
-    können Sie abschließend auf die Schaltfläche "Uplaod" klicken. Sie werden zur Hauptseite weitergeleitet
-    und die ausgewählte Datei wird hochgeladen. Vergewissern Sie sich, dass Sie unten auf der Seite ein kleines Kästchen sehen
-    welches 'File was uploaded succesfully' zeigt.
-    <br><br>
-    <img id="image" src="assets/images/manual/neuuploadsucces.png" alt="uploadsucces" />
-    <br><br>
-    Beachten Sie, dass es nicht möglich ist, Dateien hochzuladen, die den gleichen Namen haben wie eine bereits existierende
-    Datei.
-    <br>
-    <br><br><h2>Erstellen einer Datei</h2>
-    Alternativ können Sie auch die <img id="image" src="assets/images/manual/createfilebutton.png" alt="createfilebutton" />
-    Schaltfläche nutzen.
-    <br>
-    <br>
-    Wie der Name schon sagt, dient sie zum Erstellen von .aml-Dateien direkt in der AML-NoSQL-Datenbank. Ein Klick auf
-    auf die Schaltfläche wird Ihnen ein Fenster angezeigt, das dem Fenster zum Hochladen sehr ähnlich sieht.
-    <br><br>
-    <img id="image" src="assets/images/manual/neucreatefile.png" alt="createfile" />
-    <br><br>
-    Wie beim Upload gibt es die Schaltflächen "Abbrechen" und "Hochladen" mit den selben Funktionalitäten.
-    Diesmal haben Sie eine Eingabezeile, in der 'Name' steht. Benutzen Sie diese, um einen Namen zu deklarieren, aber denken Sie daran, einen eindeutigen Namen zu wählen.
-    Wie Sie auf der
-    rechten Seite der Eingabezeile sehen können, müssen Sie nicht .aml als Dateityp deklarieren. Die Software macht dies
-    automatisch für Sie. Das große Textfeld unten dient dazu, Code für Ihre .aml-Datei zu schreiben. Es
-    unterstützt sogar Syntax-Highlighting. Wenn Sie mit dem Schreiben fertig sind, können Sie durch Klicken auf die Schaltfläche
-    Schaltfläche 'Hochladen' den Prozess abschließen.
-    <br><br>
-    <img id="image" src="assets/images/manual/neucreatecode.png" alt="createfilecode" />
-    <br><br>
-    Sie werden auf die Hauptseite weitergeleitet und Ihre Datei wird in der Tabelle angezeigt. Stellen Sie erneut sicher, dass Sie die 
-    kleine Warnbox sehen, die Ihnen mitteilt, dass die Erstellung erfolgreich war.
-    <br><br>
-    <img id="image" src="assets/images/manual/neucreatesuccess.png" alt="createdfilesuccessfully" />
-    <br>
-    <br><br><h2>Finden einer Datei</h2>
-    Wenn Sie mehrere Dateien in die Datenbank hochgeladen haben, kann das Auffinden bestimmter Elemente schwierig werden.
-    Um Ihnen das Auffinden der gesuchten Dateien zu erleichtern, bietet AML-NoSQL eine Suchleiste am oberen linken
-    Rand der Datenbank. Mit ihre lassen sich Filterwörter eingeben.
-    <br><br>
-    <img id="image" src="assets/images/manual/filterbox.png" alt="filterbox" />
-    <br><br>
-    Sie können alle Arten von Schlüsselwörtern eingeben, zum Beispiel Zahlen, um nach dem Datum, der ID oder der Größe zu suchen oder
-    Buchstaben, um nach dem Namen der Datei zu suchen. Auch eine Kombination aus Zahlen und Buchstaben
-    ist möglich.
-    <br><br>
-    <img id="image" src="assets/images/manual/neufilterdemo.png" alt="searchdemonstrate" />
-    <br><br>
-    So können Sie Dateien mit unerwünschten Attributen herausfiltern.
-    <br><br><br>
-    <h1>Verwendung der Tabelle</h1>
-    Die Tabelle ist das Herzstück der Hauptseite. Alle hochgeladenen .aml-Dateien werden hier angezeigt.
-    <br><br>
-    <img id="image" src="assets/images/manual/neutable.png" alt="table" />
-    <br>
-    <br><br><h2>Dateien sortieren</h2>
-    Um sie leichter zu finden, können Sie die Tabelle sortieren. Dazu bietet sich die Sortierleiste an.
-    <br><br>
-    <img id="image" src="assets/images/manual/sortbar.png" alt="sortbar" />
-    <br><br>
-    Dazu drücken Sie einfach auf eine der Kategorien am Tabellenkopf. Sie können aufsteigend oder
-    absteigend, entweder nach "ID", einer von der Software vergebenen Kennung zur Identifizierung hochgeladener
-    Dateien, 'Name', das ist der Name, den Sie für Ihre Datei gewählt haben, 'Größe', das ist die Größe der von Ihnen
-    hochgeladenen Datei angibt, und 'Datum', das das Datum der Erstellung (nicht des Hochladens!) Ihrer Datei angibt. Zum Umschalten
-    zwischen auf- und absteigend, klicken Sie einfach noch einmal auf das gewünschte Attribut.
-    <br><br>
-    <img id="image" src="assets/images/manual/idascending.png" alt="idascending" /> <br>
-    <img id="image" src="assets/images/manual/iddescending.png" alt="iddescending" />
-    <br><br>
-    Mit einem dritten Klick können Sie die Sortierung beenden.
-    <br>
-    <br><br><h2>Editieren, Herunterladen oder Löschen einer Datei</h2>
-    Der Punkt auf der rechten Seite der Tabellenüberschrift lautet "Aktionen".
-    <br><br>
-    <img id="image" src="assets/images/manual/actions.png" alt="actions" />
+        <img id="image" src="assets/images/manual/uploadselected.png" alt="uploadselected" />
         <br><br>
-    Hier können Sie Dateien löschen, herunterladen oder bearbeiten. Um eine Datei zu bearbeiten, müssen Sie auf das Symbol <img id="image" src="assets/images/manual/editfile.png" alt="editfile" /> klicken.
-    <br>
-    Sie werden dann zu einer Alertbox weitergeleitet, die wie die von "Datei erstellen" aussieht. Sie können nun
-    den Namen ändern und den Code der Datei bearbeiten. Natürlich können Sie den Vorgang auch abbrechen, wenn Sie
-    keine Änderungen vornehmen möchten. Klicken Sie hierfür auf 'Cancel'. Wenn Sie mit der Bearbeitung fertig sind, drücken Sie einfach auf 'Upload'.
-    <br>
-    <br>
-    Um Dateien herunterzuladen, können Sie den <img id="image" src="assets/images/manual/downloadfile.png" alt="downloadfile" /> Button verwenden.
-    <br>
-    Der Download wird daraufhin automatisch gestartet.
-    <br>
-    <br>
-    Die
-    letzte Möglichkeit ist das Löschen von Dateien. Zum Löschen einer Datei drücken Sie die Schaltfläche <img id="image" src="assets/images/manual/deletefile.png" alt="deletefile" />.
-    <br>
-    Um sicherzustellen, dass Sie nicht versehentlich eine Datei löschen, erhalten Sie eine zweite Bestätigung
-    bevor die Datei gelöscht wird.
-    <br><br>
-    <img id="image" src="assets/images/manual/suredelete.png" alt="suredelete" />
-    <br><br>
-    Um den Löschvorgang zu bestätigen, müssen Sie auf "OK" klicken.
-    <br>
-    <br><br><h2>Seitenwechsel</h2>
-    In der rechten unteren Ecke sehen Sie das Paging.
-    <br><br>
-    <img id="image" src="assets/images/manual/neumanyfiles.png" alt="manyfiles" />
-    <br><br>
-    Aus Gründen der Benutzerfreundlichkeit und Performance werden nur 10 Elemente pro Seite angezeigt.
-    <br><br>
-    <img id="image" src="assets/images/manual/defaultitemsperpage.png" alt="defaultitemsperpage" />
-    <br><br>
-    Diese Zahl kann auf bis zu 200 erweitert werden. Klicken Sie einfach auf die Zahl rechts neben 'Items per
-    Site' und wählen Sie die gewünschte Anzahl aus.
-    <br><br>
-    <img id="image" src="assets/images/manual/filespersite.png" alt="filespersite" />
-    <br><br>
-    Auf der rechten Seite dieser Auswahl sehen Sie die Anzahl der Elemente, die pro Seite angezeigt werden.
-    Zu guter Letzt sehen Sie in der rechten Ecke zwei Pfeile.
-    <br><br>
-    <img id="image" src="assets/images/manual/pagearrow.png" alt="pagearrow" />
-    <br><br>
-    Sie können diese verwenden, um zwischen mehreren Tabellenseiten zu navigieren, damit Sie nicht zu viele
-    Elemente pro Seite angezeigt bekommen.
-    <br>
-    <br><br>
-    <h2>
-      Konnten wir Ihnen weiterhelfen? Wenn Sie noch Fragen haben, können Sie uns gerne kontaktieren. Klicken Sie .
-        <a href="http://localhost:4200/about-us">hier</a>, um zu unseren Kontaktinformationen zu gelangen.
-    </h2>
-  </mat-card>  
-</ng-container>
+        Use this to make sure you have chosen the right file. If you are certain that you selected everything
+        correctly, you can finally press the 'Uplaod' button. You will be redirected to the main page
+        and the selected file will be uploaded. Make sure you see a little altert box at the bottom of the site
+        which sais 'File was uploaded succesfully'.
+        <br><br>
+        <img id="image" src="assets/images/manual/neuuploadsucces.png" alt="uploadsucces" />
+        <br><br>
+        Note that it is not possible to upload files which have the same name like an already existing
+        one.
+        <br>
+        <br><br><h2>Creating a file</h2>
+        Alternatively you can also choose to make use of the <img id="image" src="assets/images/manual/createfilebutton.png" alt="createfilebutton" />
+        button.
+        <br>
+        <br>
+        As the name sais, it is used to create .aml files directly in the AML-NoSQL Database. Clicking
+        it will also show you an alert box which looks very similar to the one where you can upload.
+        <br><br>
+        <img id="image" src="assets/images/manual/neucreatefile.png" alt="createfile" />
+        <br><br>
+        Like in the upload process there are 'Cancel' and 'Upload' buttons with the same functionallities as in the upload process.
+        This time you have an input line which sais 'Name'. Use this to declare a name but keep in mind to choose a unique name because
+        otherwise you will get an error. As you can see on the
+        right side of the inputline, you dont have to to write .aml as file type. The software does this
+        automatically for you. The big Textfield down under is used to write code for your .aml file. It
+        even supports syntax highlighting. When you are done writing you can confirm by clicking the
+        'Upload' button.
+        <br><br>
+        <img id="image" src="assets/images/manual/neucreatecode.png" alt="createfilecode" />
+        <br><br>
+        You will be redirected to the main page and your file will appear at the table. Again make sure that you see the 
+        little alert box that tells you that the creation was succesfull.
+        <br><br>
+        <img id="image" src="assets/images/manual/neucreatesuccess.png" alt="createdfilesuccessfully" />
+        <br>
+        <br><br><h2>Finding a file</h2>
+        When you have uploaded several files to the database, finding specific items can get difficult.
+        To help you finding the files you are searching for, AML-NoSQL provides a searchbar on the left
+        top of the Database to specify filterwords.
+        <br><br>
+        <img id="image" src="assets/images/manual/filterbox.png" alt="filterbox" />
+        <br><br>
+        You can type all kinds of keywords for example numbers to search for the date, ID or size or
+        type characters to search for the name of the file. A combination of numbers and characters is
+        possible as well.
+        <br><br>
+        <img id="image" src="assets/images/manual/neufilterdemo.png" alt="searchdemonstrate" />
+        <br><br>
+        Therefore you will be able to filter out files with attributes you don't want.
+        <br><br><br>
+        <h1>Using the Table</h1>
+        The table is the heart of the main page. All uploaded .aml files will appear here.
+        <br><br>
+        <img id="image" src="assets/images/manual/neutable.png" alt="table" />
+        <br>
+        <br><br><h2>Sorting files</h2>
+        In order to find them easier you can sort the table. Therefore you shall use the sort bar.
+        <br><br>
+        <img id="image" src="assets/images/manual/sortbar.png" alt="sortbar" />
+        <br><br>
+        To do this, just press one of the categories at the table header. You can filter ascending or
+        descending by either 'ID', which is an identifier given by the software to identify uploaded
+        files, Name, which is the name you have chosen for your file, 'Size', which is the size of your
+        created file and 'Date', which is the date of creation (not upload!) of your file. To switch
+        between ascending and descending just click the attribute of choise once again.
+        <br><br>
+        <img id="image" src="assets/images/manual/idascending.png" alt="idascending" /> <br>
+        <img id="image" src="assets/images/manual/iddescending.png" alt="iddescending" />
+        <br><br>
+        By clicking it a third time you can stop sorting.
+        <br>
+        <br><br><h2>Edit, download or delete a file</h2>
+        The item on the right side of the table header sais 'Actions'.
+        <br><br>
+        <img id="image" src="assets/images/manual/actions.png" alt="actions" />
+        <br><br>
+        Here you can delete, download or edit files. To edit a file you must click the <img id="image" src="assets/images/manual/editfile.png" alt="editfile" /> symbol.
+        <br>
+        You will then be redirected to a alertbox which looks like the 'Create file' one. You can now
+        change the name and edit the code of the file. Of course you can 'Cancel' the operation if you
+        dont want to do any changes. If you are done editing just press 'Upload'.
+        <br>
+        <br>
+        To download files you can use this <img id="image" src="assets/images/manual/downloadfile.png" alt="downloadfile" /> button.
+        <br>
+        The download will start automatically.
+        <br>
+        <br>
+        The
+        last option is to delete files. To delete a file press the <img id="image" src="assets/images/manual/deletefile.png" alt="deletefile" /> button.
+        <br>
+        To make sure you do not delete a file on accident, you will get a second instance confirmation
+        before the file is deleted.
+        <br><br>
+        <img id="image" src="assets/images/manual/suredelete.png" alt="suredelete" />
+        <br><br>
+        You will have to press 'OK' to confirm the deletion process.
+        <br>
+        <br><br><h2>Paging</h2>
+        At the bottom right corner you can see the paging operations.
+        <br><br>
+        <img id="image" src="assets/images/manual/neumanyfiles.png" alt="manyfiles" />
+        <br><br>
+        For reasons of user experience and performance only 10 items are shown per page.
+        <br><br>
+        <img id="image" src="assets/images/manual/defaultitemsperpage.png" alt="defaultitemsperpage" />
+        <br><br>
+        Anyways you can set this number up tp 200. Just click on the number right next to 'Items per
+        page' ans select your number of choice.
+        <br><br>
+        <img id="image" src="assets/images/manual/filespersite.png" alt="filespersite" />
+        <br><br>
+        On the right side of this selection you can see the amount of items which are shown per page.
+        Last but not least in the right corner you can see two arrows.
+        <br><br>
+        <img id="image" src="assets/images/manual/pagearrow.png" alt="pagearrow" />
+        <br><br>
+        You can use them to navigate between multiple table pages so you dont have to show too many
+        items per page.
+        <br>
+        <br><br>
+        <h2>
+          Could this help you? If you still have any questions feel free to contact us. Click
+           <a href="http://localhost:4200/about-us">here</a> to find our contact information.
+        </h2>
+      </mat-card>  
+    </ng-container>
+  
+  <ng-container *ngIf="translate.currentLang == 'de'">
+      <div class="title">
+        <h1>Hilfe- und Infoseite</h1>
+        <h2>Kommen Sie hierher, wenn Sie Probleme mit der korrekten Nutzung der AML NoSQL-Datenbank haben</h2>
+      </div>
+      <mat-card class="content-container">
+        <a id="user-content-2-introduction" class="anchor" href="#2-introduction" aria-hidden="true"
+          ><svg
+            class="octicon octicon-link"
+            viewBox="0 0 16 16"
+            version="1.1"
+            width="16"
+            height="16"
+            aria-hidden="true"
+          >
+            <path fill-rule="evenodd"></path></svg
+        ></a>
+        <br>
+        Das AML-NoSQL-Datenbank-Management wird verwendet, um AML-Dateien in eine NoSQL-Datenbank zu laden, um eine
+        einheitliche und zentrale Lösung zur Verwaltung von AML-Dateien bereitzustellen.
+      <br>AML ist ein als Austauschformat entwickeltes Dateiformat mit einem offenen Standard.
+      <br>Aus Sicht des Benutzers bietet die GUI folgende Funktionalitäten:
+      <ol>
+        <li>Hochladen von AML-Dateien vom Computer des Benutzers.</li>
+        <li>Herunterladen von Dateien auf den Computer, die zuvor hochgeladen wurden.</li>
+        <li>Hochgeladene Dateien in einem Dialogfenster bearbeiten aktualisieren.</li>
+        <li>Hochgeladene Dateien bei Bedarf löschen.</li>
+        <li>Mit Suchfeld AML-Datenbank durchsuchen</li>
+        </ol>
+        <h1>Profil</h1>
+      <h2>Anmeldung</h2>
+        Wenn Sie die Seite starten, sehen Sie ein Login. Hier können Sie einen Benutzernamen und ein Passwort eingeben und die Schaltfläche "Login" drücken, um sich anzumelden. Der eingegebene Benutzername muss aus 3 bis 100 Buchstaben bestehen.
+        <br>
+        <br>
+          <img id="image" src="https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/blob/master/SOURCE/FRONTEND/aml-database-management/src/assets/images/manual/login.png" alt="navbar" />
+          <br>
+        <br>
+        <br>
+        <h2>Abmelden</h2>
+      Nachdem Sie Ihre Arbeit an der AML-NoSQL-Datenbank beendet haben, möchten Sie sich eventuell abmelden. 
+      Dazu müssen Sie auf das
+          <img id="image" src="https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/blob/master/SOURCE/FRONTEND/aml-database-management/src/assets/images/manual/profile.png" alt="navbar" /> Symbol klicken.
+        <br>
+        <br>
+      Es öffnet sich ein kleines Popup, das Ihnen anzeigt, welches Benutzerprofil Sie verwenden.
+      <br>
+          <img id="image" src="https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/blob/master/SOURCE/FRONTEND/aml-database-management/src/assets/images/manual/logout.png" alt="navbar" />
+        <br>
+        Außerdem zeigt es einen 'Logout'-Button an. Drücken Sie diesen um sich abzumelden.
+  
+  Übersetzt mit www.DeepL.com/Translator (kostenlose Version)
+        <h1>Navigationsleiste</h1>
+        Am oberen Rand der Website sehen Sie eine orangefarbene, sogenannte Navigationsleiste oder kurz Navbar. Die Navigationsleiste wird immer oben auf der Website angezeigt, um eine einfache Navigation zu allen Bereichen zu ermöglichen.
+        <br>
+        <br>
+          <img id="image" src="/assets/images/manual/neulogo.png" alt="navbar" />
+          <br>
+          <br>
+          In der oberen linken Ecke sehen Sie unser Logo und den Namen der Software. Keine
+          Funktionalitäten sind hier zu finden.
+          <br>
+          <br>
+          <img id="image" src="assets/images/manual/logo.png" alt="logo" />
+          <br>
+          <br>
+          <br>
+          <br>
+          <h2>Sprache wechseln</h2>
+          In der oberen rechten Ecke finden Sie verschiedene Symbole.
+          <br><br>
+          <img id="image" src="assets/images/manual/navmenu.png" alt="navmenu">
+          <br><br>
+          Beginnend von links sehen Sie ein Icon,
+          das entweder eine amerikanische oder eine deutsche Flagge zeigt. Über diese Schaltfläche können Sie Ihre Sprache auswählen.
+          <br><br>
+          <img id="image" class="specialimage" src="assets/images/manual/changelanguage.png" alt="changelanguage" />
+          <br><br>
+          <br><br>      
+          <h2>Infoseite</h2>
+          Wenn Sie ein Symbol weiter nach rechts wandern, sehen Sie dieses Symbol: <img width="30px" id="image" src="assets/images/manual/info.png" alt="info" />
+          <br>
+          Mit dieser Schaltfläche können Sie auf die Info-Seite navigieren. Die Seite, auf die Sie anschließend geleitet
+          werden, wird den gleichen Erklärungstext enthalten, wie das Benutzerhandbuch, das Sie gerade lesen.
+          <br>
+          <br>
+          <h2>Home</h2>
+          Der nächste Punkt ist eine <img height="30px" id="image" src="assets/images/manual/home.png" alt="home" /> Schaltfläche. Mit dieser Schaltfläche kommen Sie auf die Hauptseite unserer
+          Software zurück, die gleichzeitig die produktive Seite ist.
+          <br>
+          <br>
+          <br><br><h2>Über uns</h2>
+          Das letzte Element in der rechten oberen Ecke ist der Bereich <img height="30px" id="image" src="assets/images/manual/aboutus.png" alt="aboutus" />.
+          <br>
+          Wenn Sie dort klicken, gelangen Sie auf eine Unterseite, auf der Sie ein wenig mehr über das Team hinter der AML NoSQL
+          Datenbank-Management-Softwareverfahren können.
+          Sie finden dort Bilder unserer Teammitglieder sowie deren Positionen. Außerdem finden Sie hier Kontaktinformationen. 
+          Sie können uns gerne eine E-Mail schreiben, wenn Sie Fragen haben oder uns
+          Feedback geben wollen.
+          <br><br><br>
+          <h1>Hauptseite</h1>
+          Kommen wir nun zum wichtigsten Teil unserer Website: der Hauptseite.
+          <br><br>
+          <img id="image" src="assets/images/manual/neumainpage.png" alt="mainpage" />
+          <br><br>
+          Hier finden Sie das Herzstück unserer Software: die AML NoSQL-Datenbank. Beginnend auf der oberen rechten
+          Seite finden Sie zwei Buttons:
+          <br><br>
+          <img id="image" src="assets/images/manual/uploadcreate.png" alt="uploadcreate" />
+          <br><br>
+          Beide werden verwendet, um neue AML-Dateien in die AML NoSQL-Datenbank einzufügen.
+          <br><br><h2>Hochladen einer Datei</h2>
+          Die linke Schaltfläche, die <img id="image" src="assets/images/manual/upload.png" alt="upload" /> heißt, dient zum Hochladen von .aml-Dateien vom eigenen Rechner.
+          <br>
+          
+          <br>
+          Wenn Sie auf diese Schaltfläche klicken, sollte ein kleines Popup-Fenster erscheinen, in dem es heißt: "Datei hochladen".
+          Hier können Sie Ihre AML-Datei hochladen.
+          <br><br>
+          <img id="image" src="assets/images/manual/uploadaltert.png" alt="uploadalert" />
+          <br><br>
+          Unter diesen Texten sehen Sie auf der linken Seite eine kleine Schaltfläche
+          mit 'Datei wählen'. Rechts neben der Schaltfläche befindet sich ein Infotext, der den
+          Upload-Status anzeigt. Standardmäßig steht dort "Keine Datei ausgewählt". In der unteren rechten Ecke sehen Sie zwei
+          Schaltflächen. Die linke heißt "Abbrechen" und kann verwendet werden, um den Upload-Vorgang abzubrechen. Die rechte Schaltfläche,
+          die standardmäßig ausgegraut und blockiert ist, heißt "Hochladen". Um die Schaltfläche "Hochladen" zu verwenden, müssen Sie
+          müssen Sie zuerst die Schaltfläche "Datei auswählen" drücken. Wenn Sie hierauf klicken, wird Ihr lokales Dateisystem geöffnet. Sie können
+          Sie können nun Ihr lokales Dateisystem nach Dateien durchsuchen, die Sie hochladen möchten. Wählen Sie diese einfach aus und wählen Sie
+          bestätigen. Wie genau Ihr Dateisystem sowie der Bestätigungsvorgang aussieht, hängt
+          von dem von Ihnen verwendeten Betriebssystem ab. 
+          Nachdem Sie eine Datei ausgewählt haben, sehen Sie, dass Ihre ausgewählte Datei an der Stelle angezeigt wird, an der vorher
+          'Keine Datei ausgewählt' vorher stand.
+          <br><br>
+      <img id="image" src="assets/images/manual/uploadselected.png" alt="uploadselected" />
+      <br><br>
+      Verwenden Sie dies, um sicherzustellen, dass Sie die richtige Datei ausgewählt haben. Wenn Sie sicher sind, dass Sie alles richtig ausgewählt haben, 
+      können Sie abschließend auf die Schaltfläche "Uplaod" klicken. Sie werden zur Hauptseite weitergeleitet
+      und die ausgewählte Datei wird hochgeladen. Vergewissern Sie sich, dass Sie unten auf der Seite ein kleines Kästchen sehen
+      welches 'File was uploaded succesfully' zeigt.
+      <br><br>
+      <img id="image" src="assets/images/manual/neuuploadsucces.png" alt="uploadsucces" />
+      <br><br>
+      Beachten Sie, dass es nicht möglich ist, Dateien hochzuladen, die den gleichen Namen haben wie eine bereits existierende
+      Datei.
+      <br>
+      <br><br><h2>Erstellen einer Datei</h2>
+      Alternativ können Sie auch die <img id="image" src="assets/images/manual/createfilebutton.png" alt="createfilebutton" />
+      Schaltfläche nutzen.
+      <br>
+      <br>
+      Wie der Name schon sagt, dient sie zum Erstellen von .aml-Dateien direkt in der AML-NoSQL-Datenbank. Ein Klick auf
+      auf die Schaltfläche wird Ihnen ein Fenster angezeigt, das dem Fenster zum Hochladen sehr ähnlich sieht.
+      <br><br>
+      <img id="image" src="assets/images/manual/neucreatefile.png" alt="createfile" />
+      <br><br>
+      Wie beim Upload gibt es die Schaltflächen "Abbrechen" und "Hochladen" mit den selben Funktionalitäten.
+      Diesmal haben Sie eine Eingabezeile, in der 'Name' steht. Benutzen Sie diese, um einen Namen zu deklarieren, aber denken Sie daran, einen eindeutigen Namen zu wählen.
+      Wie Sie auf der
+      rechten Seite der Eingabezeile sehen können, müssen Sie nicht .aml als Dateityp deklarieren. Die Software macht dies
+      automatisch für Sie. Das große Textfeld unten dient dazu, Code für Ihre .aml-Datei zu schreiben. Es
+      unterstützt sogar Syntax-Highlighting. Wenn Sie mit dem Schreiben fertig sind, können Sie durch Klicken auf die Schaltfläche
+      Schaltfläche 'Hochladen' den Prozess abschließen.
+      <br><br>
+      <img id="image" src="assets/images/manual/neucreatecode.png" alt="createfilecode" />
+      <br><br>
+      Sie werden auf die Hauptseite weitergeleitet und Ihre Datei wird in der Tabelle angezeigt. Stellen Sie erneut sicher, dass Sie die 
+      kleine Warnbox sehen, die Ihnen mitteilt, dass die Erstellung erfolgreich war.
+      <br><br>
+      <img id="image" src="assets/images/manual/neucreatesuccess.png" alt="createdfilesuccessfully" />
+      <br>
+      <br><br><h2>Finden einer Datei</h2>
+      Wenn Sie mehrere Dateien in die Datenbank hochgeladen haben, kann das Auffinden bestimmter Elemente schwierig werden.
+      Um Ihnen das Auffinden der gesuchten Dateien zu erleichtern, bietet AML-NoSQL eine Suchleiste am oberen linken
+      Rand der Datenbank. Mit ihre lassen sich Filterwörter eingeben.
+      <br><br>
+      <img id="image" src="assets/images/manual/filterbox.png" alt="filterbox" />
+      <br><br>
+      Sie können alle Arten von Schlüsselwörtern eingeben, zum Beispiel Zahlen, um nach dem Datum, der ID oder der Größe zu suchen oder
+      Buchstaben, um nach dem Namen der Datei zu suchen. Auch eine Kombination aus Zahlen und Buchstaben
+      ist möglich.
+      <br><br>
+      <img id="image" src="assets/images/manual/neufilterdemo.png" alt="searchdemonstrate" />
+      <br><br>
+      So können Sie Dateien mit unerwünschten Attributen herausfiltern.
+      <br><br><br>
+      <h1>Verwendung der Tabelle</h1>
+      Die Tabelle ist das Herzstück der Hauptseite. Alle hochgeladenen .aml-Dateien werden hier angezeigt.
+      <br><br>
+      <img id="image" src="assets/images/manual/neutable.png" alt="table" />
+      <br>
+      <br><br><h2>Dateien sortieren</h2>
+      Um sie leichter zu finden, können Sie die Tabelle sortieren. Dazu bietet sich die Sortierleiste an.
+      <br><br>
+      <img id="image" src="assets/images/manual/sortbar.png" alt="sortbar" />
+      <br><br>
+      Dazu drücken Sie einfach auf eine der Kategorien am Tabellenkopf. Sie können aufsteigend oder
+      absteigend, entweder nach "ID", einer von der Software vergebenen Kennung zur Identifizierung hochgeladener
+      Dateien, 'Name', das ist der Name, den Sie für Ihre Datei gewählt haben, 'Größe', das ist die Größe der von Ihnen
+      hochgeladenen Datei angibt, und 'Datum', das das Datum der Erstellung (nicht des Hochladens!) Ihrer Datei angibt. Zum Umschalten
+      zwischen auf- und absteigend, klicken Sie einfach noch einmal auf das gewünschte Attribut.
+      <br><br>
+      <img id="image" src="assets/images/manual/idascending.png" alt="idascending" /> <br>
+      <img id="image" src="assets/images/manual/iddescending.png" alt="iddescending" />
+      <br><br>
+      Mit einem dritten Klick können Sie die Sortierung beenden.
+      <br>
+      <br><br><h2>Editieren, Herunterladen oder Löschen einer Datei</h2>
+      Der Punkt auf der rechten Seite der Tabellenüberschrift lautet "Aktionen".
+      <br><br>
+      <img id="image" src="assets/images/manual/actions.png" alt="actions" />
+          <br><br>
+      Hier können Sie Dateien löschen, herunterladen oder bearbeiten. Um eine Datei zu bearbeiten, müssen Sie auf das Symbol <img id="image" src="assets/images/manual/editfile.png" alt="editfile" /> klicken.
+      <br>
+      Sie werden dann zu einer Alertbox weitergeleitet, die wie die von "Datei erstellen" aussieht. Sie können nun
+      den Namen ändern und den Code der Datei bearbeiten. Natürlich können Sie den Vorgang auch abbrechen, wenn Sie
+      keine Änderungen vornehmen möchten. Klicken Sie hierfür auf 'Cancel'. Wenn Sie mit der Bearbeitung fertig sind, drücken Sie einfach auf 'Upload'.
+      <br>
+      <br>
+      Um Dateien herunterzuladen, können Sie den <img id="image" src="assets/images/manual/downloadfile.png" alt="downloadfile" /> Button verwenden.
+      <br>
+      Der Download wird daraufhin automatisch gestartet.
+      <br>
+      <br>
+      Die
+      letzte Möglichkeit ist das Löschen von Dateien. Zum Löschen einer Datei drücken Sie die Schaltfläche <img id="image" src="assets/images/manual/deletefile.png" alt="deletefile" />.
+      <br>
+      Um sicherzustellen, dass Sie nicht versehentlich eine Datei löschen, erhalten Sie eine zweite Bestätigung
+      bevor die Datei gelöscht wird.
+      <br><br>
+      <img id="image" src="assets/images/manual/suredelete.png" alt="suredelete" />
+      <br><br>
+      Um den Löschvorgang zu bestätigen, müssen Sie auf "OK" klicken.
+      <br>
+      <br><br><h2>Seitenwechsel</h2>
+      In der rechten unteren Ecke sehen Sie das Paging.
+      <br><br>
+      <img id="image" src="assets/images/manual/neumanyfiles.png" alt="manyfiles" />
+      <br><br>
+      Aus Gründen der Benutzerfreundlichkeit und Performance werden nur 10 Elemente pro Seite angezeigt.
+      <br><br>
+      <img id="image" src="assets/images/manual/defaultitemsperpage.png" alt="defaultitemsperpage" />
+      <br><br>
+      Diese Zahl kann auf bis zu 200 erweitert werden. Klicken Sie einfach auf die Zahl rechts neben 'Items per
+      Site' und wählen Sie die gewünschte Anzahl aus.
+      <br><br>
+      <img id="image" src="assets/images/manual/filespersite.png" alt="filespersite" />
+      <br><br>
+      Auf der rechten Seite dieser Auswahl sehen Sie die Anzahl der Elemente, die pro Seite angezeigt werden.
+      Zu guter Letzt sehen Sie in der rechten Ecke zwei Pfeile.
+      <br><br>
+      <img id="image" src="assets/images/manual/pagearrow.png" alt="pagearrow" />
+      <br><br>
+      Sie können diese verwenden, um zwischen mehreren Tabellenseiten zu navigieren, damit Sie nicht zu viele
+      Elemente pro Seite angezeigt bekommen.
+      <br>
+      <br><br>
+      <h2>
+        Konnten wir Ihnen weiterhelfen? Wenn Sie noch Fragen haben, können Sie uns gerne kontaktieren. Klicken Sie .
+          <a href="http://localhost:4200/about-us">hier</a>, um zu unseren Kontaktinformationen zu gelangen.
+      </h2>
+    </mat-card>  
+  </ng-container>
+  
