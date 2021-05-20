@@ -12,7 +12,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
-const handlebars = require('handlebars');
 const request = require('request');
 const fs = require('fs');
 
@@ -78,10 +77,10 @@ app.post('/login', (req, res) => {
   if (data && data.usernameOrEmail && data.password) {
     const usernameOrEmail = data.usernameOrEmail;
     const password = data.password;
-    if(usernameOrEmail == process.env.APP_USER_NAME && password == process.env.APP_USER_PASSWORD) {
+    if (usernameOrEmail == process.env.APP_USER_NAME && password == process.env.APP_USER_PASSWORD) {
       const authToken = jwt.sign({ usernameOrEmail }, process.env.JWT_SECRET, {
         expiresIn: '86400000', // expires in 24 hours
-      });      
+      });
       res.cookie('authToken', authToken, {
         maxAge: 86400000,
         httpOnly: true,
@@ -107,7 +106,9 @@ app.get(`/authenticate`, (req, res) => {
       if (err) {
         res.status(400).json({ status: 'error', message: 'Failed to authenticate token' });
       } else {
-        res.status(200).send({ status: 'success', data: { usernameOrEmail: decoded.usernameOrEmail } });
+        res
+          .status(200)
+          .send({ status: 'success', data: { usernameOrEmail: decoded.usernameOrEmail } });
       }
     });
   } else {
