@@ -7,6 +7,7 @@ You have to have 'npm' installed on your computer to use the AML-NoSQL Database.
 
 ## Installation
 Go to TINF19C_Team_5_AML_Database_Management/SOURCE/FRONTEND/aml-database-management/.
+<br>
 Open a terminal.
 Run `npm i` to install the software on your computer.
 
