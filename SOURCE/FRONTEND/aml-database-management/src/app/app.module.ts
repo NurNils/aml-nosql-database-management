@@ -79,9 +79,7 @@ import { CardWrapperComponent } from './shared/components/card-wrapper/card-wrap
     MatSnackBarModule,
     MatSortModule,
   ],
-  providers: [    
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
-  ],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

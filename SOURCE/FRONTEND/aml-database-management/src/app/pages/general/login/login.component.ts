@@ -55,8 +55,8 @@ export class LoginComponent implements OnInit {
           this.snackBarService.openSnackbarSuccess('success.login');
           this.loginFormGroup.reset();
           this.router.navigateByUrl(this.returnUrl).then();
-        }        
-      } else {        
+        }
+      } else {
         this.snackBarService.openSnackbarError('error.login');
       }
     }

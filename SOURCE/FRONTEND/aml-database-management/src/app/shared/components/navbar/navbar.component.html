@@ -13,15 +13,17 @@
     </a>
     <span class="spacer"></span>
     <!-- Home -->
-    <a class="link" *ngIf="authService.getUsernameOrEmail()" [routerLink]="['/']">{{ 'home' | translate }}</a>
+    <a class="link" *ngIf="authService.getUsernameOrEmail()" [routerLink]="['/']">{{
+      'home' | translate
+    }}</a>
     <!-- About Us -->
-    <a class="link" [routerLink]="['/about-us']">{{ 'about-us' | translate }}</a>   
+    <a class="link" [routerLink]="['/about-us']">{{ 'about-us' | translate }}</a>
     <!-- Info -->
-    <a [routerLink]="['/info']" class="link"> 
+    <a [routerLink]="['/info']" class="link">
       <button mat-icon-button class="example-icon favorite-icon">
         <mat-icon>info</mat-icon>
       </button>
-    </a> 
+    </a>
     <!-- Logged In -->
     <ng-container *ngIf="authService.getUsernameOrEmail()">
       <!-- User Menu -->
@@ -33,12 +35,16 @@
           <!-- Username -->
           <p>{{ 'user' | translate: { usernameOrEmail: authService.getUsernameOrEmail() } }}</p>
           <!-- Logout -->
-          <button mat-raised-button color="warn" (click)="logout()">{{ 'logout' | translate }}</button> 
-       </div>
-       </mat-menu>
+          <button mat-raised-button color="warn" (click)="logout()">
+            {{ 'logout' | translate }}
+          </button>
+        </div>
+      </mat-menu>
     </ng-container>
     <!-- Login -->
-    <a *ngIf="!authService.getUsernameOrEmail()" class="link" [routerLink]="['/login']"><button mat-raised-button color="accent">{{ 'login' | translate }}</button></a>      
+    <a *ngIf="!authService.getUsernameOrEmail()" class="link" [routerLink]="['/login']"
+      ><button mat-raised-button color="accent">{{ 'login' | translate }}</button></a
+    >
     <!-- Language Wrapper -->
     <app-language-wrapper></app-language-wrapper>
   </mat-toolbar>

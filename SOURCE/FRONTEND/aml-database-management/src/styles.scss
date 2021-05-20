@@ -55,7 +55,8 @@ mat-dialog-container {
 
 .mat-mini-fab,
 .mat-raised-button {
-  &[color='primary'], &[color='accent'] {
+  &[color='primary'],
+  &[color='accent'] {
     color: white;
   }
 }

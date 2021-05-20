@@ -25,12 +25,16 @@ export class NavbarComponent {
   appVersion = env.appVersion;
 
   /** Constructor */
-  constructor(private router: Router, public authService: AuthService, private snackBarService: SnackBarService) {}
+  constructor(
+    private router: Router,
+    public authService: AuthService,
+    private snackBarService: SnackBarService
+  ) {}
 
   /** Logout */
   async logout() {
     const res = await this.authService.logout();
-    if(res.status === IResponseStatus.success) {
+    if (res.status === IResponseStatus.success) {
       this.authService.usernameOrEmail = null;
       this.router.navigateByUrl('/login').then();
       this.snackBarService.openSnackbarSuccess('success.logout');

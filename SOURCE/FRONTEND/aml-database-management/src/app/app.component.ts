@@ -11,7 +11,11 @@ import { LanguageService } from './services/language/language.service';
 })
 export class AppComponent {
   /** Constructor */
-  constructor(private router: Router, languageService: LanguageService, private authService: AuthService) {
+  constructor(
+    private router: Router,
+    languageService: LanguageService,
+    private authService: AuthService
+  ) {
     languageService.initializeI18n();
     this.authenticate();
   }
@@ -19,9 +23,9 @@ export class AppComponent {
   /** Authenticate user */
   async authenticate() {
     const res = await this.authService.authenticate();
-    if(res.status === IResponseStatus.success && res.data?.usernameOrEmail) {
+    if (res.status === IResponseStatus.success && res.data?.usernameOrEmail) {
       this.authService.usernameOrEmail = res.data.usernameOrEmail;
-      if(this.router.isActive('/login', true)) {
+      if (this.router.isActive('/login', true)) {
         this.router.navigateByUrl('/').then();
       }
     }
