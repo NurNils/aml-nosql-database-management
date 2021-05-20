@@ -15,6 +15,9 @@ Welcome to the AML NoSQL Database Management Project.
 2. [SAS (System Architecuture Specification)](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/2.-SAS-(System-Architecuture-Specification))
 3. [MODs (Modul Documentations)](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/3.-MODs-(Modul-Documentations))
 4. [MM (Meeting Minutes)](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/4.-MM-(Meeting-Minutes))
+5. [User Manual](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/5.-User-Manual)
+6. [Systemtestplan](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/6.-Systemtestplan)
+7. [Systemtestreport](https://github.com/NurNils/TINF19C_Team_5_AML_Database_Management/wiki/7.-Systemtestreport)
 
 ## About the project
 
